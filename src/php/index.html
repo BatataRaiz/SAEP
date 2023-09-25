@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Add viewport meta tag -->
+    <link rel="stylesheet" href="../styles/index.css">
+    <title>Login SAEP</title>
+</head>
+
+<body>
+    <form action="login.php" method="POST">
+        <label for="login">Login:</label>
+        <input type="text" maxlength="42" id="nome" name="usuario" placeholder="Digite seu nome" required
+            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite aqui seu nome'" style="text-align: left"
+            autocomplete="off" /> <br>
+        <label for="senha">Senha:</label>
+        <div class="password-container">
+            <input type="password" maxlength="62" id="senha" name="senha" placeholder="Digite sua senha" required
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite sua senha'" style="text-align: left"
+                autocomplete="off" /> <input type="submit" value="Entrar"> <br>
+        </div>
+    </form>
+    <div id="falseMsg" class="failed"></div>
+    <div id="trueMsg" class="success"></div>
+    
+</body>
+
+</html>

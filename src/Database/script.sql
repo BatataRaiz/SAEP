@@ -1,9 +1,6 @@
 -- Active: 1694003461200@@127.0.0.1@3306@saep_database
-CREATE DATABASE IF NOT EXISTS saep_database;
-use saep_database;
-
-USE saep_database;
-
+CREATE DATABASE IF NOT EXISTS saepDatabase;
+use saepDatabase;
 CREATE TABLE
 IF NOT EXISTS usuarios (
 id INT(11) NOT NULL AUTO_INCREMENT,

@@ -1,30 +1,29 @@
 <?php
+include_once("login.php");
+// Iniciar a sessão
 session_start();
 
+// Configurações do banco de dados
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "saep_database";
-$login = $_POST['login'];
-$_SESSION['login'] = $login;
+$database = "saepDatabase";
+
+// Conectar ao banco de dados
 $conn = mysqli_connect($servername, $username, $password, $database);
 
+// Verificar a conexão com o banco de dados
 if (!$conn) {
     die("Erro ao conectar ao banco de dados: " . mysqli_connect_error());
 }
-
-if (!isset($_SESSION['login'])) {
-    header("Location: index.php");
-    exit();
-}
-
-$login = $_SESSION['login'];
-
+// Processar o envio do formulário
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Obter os dados do formulário
     $atividade_nome = $_POST['nome'];
     $atividade_funcionario = $_POST['funcionario'];
     $atividade_detalhes = $_POST['detalhes'];
 
+    // Inserir os dados no banco de dados
     $sql = "INSERT INTO atividades (nome, funcionario, detalhes) VALUES ('$atividade_nome', '$atividade_funcionario', '$atividade_detalhes')";
 
     if (mysqli_query($conn, $sql)) {
@@ -40,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Atividade</title>
+    <title>Cadastro de Atividade - SAEP</title>
 </head>
 
 <body>
@@ -59,3 +58,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="submit" value="Cadastrar">
     </form>
 </body>
+
+</html>

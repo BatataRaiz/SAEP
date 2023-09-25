@@ -1,28 +1,33 @@
 <?php
+// Iniciar a sessão
 session_start();
+
+// Configurações do banco de dados
 $host = "localhost";
 $user = "root";
 $password = "";
-$database = "saep_database";
+$database = "saepDatabase";
 
-$conn = mysqli_connect($host, $user, $password, $database);
+try {
+    // Conectar ao banco de dados usando PDO
+    $pdo = new PDO("mysql:host=$host;dbname=$database", $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Função para listar atividades
+    function listaatividades()
+    {
+        return [
+            ['numero' => 1, 'nome' => 'Atividade 1'],
+            ['numero' => 2, 'nome' => 'Atividade 2'],
+            ['numero' => 3, 'nome' => 'Atividade 3']
+        ];
+    }
 
-if (!$conn) {
-    die("Erro de conexão: " . mysqli_connect_error());
+    // Obter a lista de atividades
+    $atividades = listaatividades();
+} catch (PDOException $e) {
+    echo "Erro: " . $e->getMessage();
+    exit;
 }
-$login = $_POST['login'];
-$_SESSION['login'] = $login;
-function listaatividades()
-{
-    return [
-        ['numero' => 1, 'nome' => 'Atividade 1'],
-        ['numero' => 2, 'nome' => 'Atividade 2'],
-        ['numero' => 3, 'nome' => 'Atividade 3']
-    ];
-}
-
-$atividades = listaatividades()
-
 ?>
 
 <!DOCTYPE html>
@@ -30,65 +35,47 @@ $atividades = listaatividades()
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="../styles/style.css">
+    <title>Menu SAEP</title>
+    <link rel="stylesheet" href="../styles/menu.css">
 </head>
 
 <body>
-    <h1>Bem-vindo, <?php if (isset($login)) {
-                        echo "$login.";
-                    } else {
-                        echo "convidado.";
-                    }
-                    ?></h1>
-
-    <a href="cadAtividade.php" id="cadastroatv"> Cadastrar Atividades</a>
-    <h2>Atividades</h2>
-
-    <div class="atividades">
-    <table>
-        <tr>
-            <th>Número da atividade</th>
-            <th>Nome da atividade</th>
-            <th></th>
-            <th></th>
-        </tr>
-        <?php foreach ($atividades as $atividade) : ?>
-            <tr>
-                <td><?php echo $atividade['numero']; ?></td>
-                <td><?php echo $atividade['nome']; ?></td>
-
-                <td><button onclick="excluirAtividade (<?php
-                                                        echo $atividade['numero']; ?>)">Excluir</button></td>
-
-                <td><button onclick="visualizarAtividade
-(<?php echo $atividade['numero'];
-    ?>)">Visualizar</button></td>
-
-            </tr>
-        <?php endforeach; ?>
-    </table>
+    <div class="header">
+        <h1>Bem-vindo ao sistema SAEP, <?php if (isset($_SESSION['usuario'])) {
+                            echo $_SESSION['usuario']['senha'];
+                        } ?>!</h1>
     </div>
-    </tr>
-    <table class="atividade1">
-    <?php foreach ($atividades as $atividade) : ?>
-        <tr>
-            <td><?php echo htmlspecialchars($atividade['numero']); ?></td>
-            <td><?php echo htmlspecialchars($atividade['nome']); ?></td>
-            <td><button onclick="excluirAtividade(<?php echo $atividade['numero']; ?>)">Excluir</button></td>
-            <td><button onclick="visualizarAtividade(<?php echo $atividade['numero']; ?>)">Visualizar</button></td>
-        </tr>
-    <?php endforeach; ?>
-    </table>
-    <br>
-    <a href="cadAtividade.php" id="cadastro"> Cadastrar Atividades</a>
 
-    <br>
-    <a href="logout.php"> Sair</a>
-    <br>
+    <div class="menu">
+        <button type="button" href="cadastros.php" id="botaoCadastro"> Cadastrar Atividades</a>
+    </div>
+    <div class="conteudo menu">
+        <a>Atividades</a>
+    <div class="atividades">
+        <table>
+            <tr>
+                <th>Número da Atividade</th>
+                <th>Nome da Atividade</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <?php foreach ($atividades as $atividade) : ?>
+                <tr>
+                    <td><?php echo $atividade['numero']; ?></td>
+                    <td><?php echo $atividade['nome']; ?></td>
+                    <td><button onclick="excluirAtividade(<?php echo $atividade['numero']; ?>)">Excluir</button></td>
+                    <td><button onclick="visualizarAtividade(<?php echo $atividade['numero']; ?>)">Visualizar</button></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
+    </div>
+    <div class="footer">
+        <a href="logout.php">Sair</a>
+    </div>
     <h3>Imagem com Desfoque</h3>
-    <img src="../img/tartaruga.jpg" alt="Tartaruga" class="blur" name="tartaruga" id="tartaruga">
-    <br>
+    <img src="../Images/tartaruga.jpg" alt="Tartaruga" class="blur" name="tartaruga" id="tartaruga">
+    
 </body>
 
 </html>

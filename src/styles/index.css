@@ -1,0 +1,15 @@
+
+.password-container {
+    position: relative;
+}
+
+#falseMsg {
+    visibility: hidden;
+    display: none;
+    color: red;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
