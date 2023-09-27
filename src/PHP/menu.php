@@ -1,7 +1,6 @@
 <?php
 // Iniciar a sessão
 session_start();
-
 // Configurações do banco de dados
 $host = "localhost";
 $user = "root";
@@ -40,42 +39,48 @@ try {
 </head>
 
 <body>
+    <div class="sair">
+        <a id="botaosair" onclick="redirecionarParaSair()">Sair</a>
+    </div>
     <div class="header">
         <h1>Bem-vindo ao sistema SAEP, <?php if (isset($_SESSION['usuario'])) {
-                            echo $_SESSION['usuario']['senha'];
-                        } ?>!</h1>
+                                            echo $_SESSION['usuario']['senha'];
+                                        } ?>!</h1>
     </div>
-
     <div class="menu">
-        <button type="button" href="cadastros.php" id="botaoCadastro"> Cadastrar Atividades</a>
+        <button type="button" id="botaoCadastro" onclick="redirecionarParaCadastros()">Cadastrar Atividades</button>
     </div>
     <div class="conteudo menu">
         <a>Atividades</a>
-    <div class="atividades">
-        <table>
-            <tr>
-                <th>Número da Atividade</th>
-                <th>Nome da Atividade</th>
-                <th></th>
-                <th></th>
-            </tr>
-            <?php foreach ($atividades as $atividade) : ?>
+        <div class="atividades">
+            <table>
                 <tr>
-                    <td><?php echo $atividade['numero']; ?></td>
-                    <td><?php echo $atividade['nome']; ?></td>
-                    <td><button onclick="excluirAtividade(<?php echo $atividade['numero']; ?>)">Excluir</button></td>
-                    <td><button onclick="visualizarAtividade(<?php echo $atividade['numero']; ?>)">Visualizar</button></td>
+                    <th>Número da Atividade</th>
+                    <th>Nome da Atividade</th>
+                    <th></th>
+                    <th></th>
                 </tr>
-            <?php endforeach; ?>
-        </table>
+                <?php foreach ($atividades as $atividade) : ?>
+                    <tr>
+                        <td><?php echo $atividade['numero']; ?></td>
+                        <td><?php echo $atividade['nome']; ?></td>
+                        <td><button onclick="excluirAtividade(<?php echo $atividade['numero']; ?>)">Excluir</button></td>
+                        <td><button onclick="visualizarAtividade(<?php echo $atividade['numero']; ?>)">Visualizar</button></td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
     </div>
-    </div>
-    <div class="footer">
-        <a href="logout.php">Sair</a>
-    </div>
+    <!--
     <h3>Imagem com Desfoque</h3>
     <img src="../Images/tartaruga.jpg" alt="Tartaruga" class="blur" name="tartaruga" id="tartaruga">
-    
+                -->
+    <script src="../js/menu.js">
+    </script>
+    <div class="footer">
+        <div class="footerInfo">
+            <p>Desenvolvido por: Jvdeamo</p>
+        </div>
 </body>
 
 </html>
