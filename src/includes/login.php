@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <!-- Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página -->
+     Importante deixarmos a codificação dos caracteres e o título no início de <head> para otimização e procura da página 
     <meta charset="UTF-8">
-    <!-- meta tags -->
+     meta tags 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAEP - Carregando...</title>
     <meta name="author" content="Jvdeamo">
 </head>
+-->
 <?php
 // Iniciar a sessão
 session_start();
