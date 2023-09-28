@@ -1,184 +1,219 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
 }
 
 #tartaruga {
-    max-width: 25%;
-    max-height: 25%;
-    filter: blur(2px);
+  max-width: 25%;
+  max-height: 25%;
+  filter: blur(2px);
 }
 
 td button {
-    background-color: #2a2b2c;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin: 0 auto;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    margin-top: 20px;
-    border-radius: 20px 0px 20px 0px;
+  background-color: #2a2b2c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin: 0 auto;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 20px;
+  border-radius: 20px 0px 20px 0px;
 }
 
 #cadastros #atividades {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10rem;
-    width: 50%;
-    margin-top: 20px;
-    text-decoration: none;
-    background-color: #3498db;
-    color: #fff;
-    padding: 0.5rem;
-    width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10rem;
+  width: 50%;
+  margin-top: 20px;
+  text-decoration: none;
+  background-color: #3498db;
+  color: #fff;
+  padding: 0.5rem;
+  width: 120px;
 }
 
 /* Estilos para os botões Excluir e Visualizar */
 
 button:hover {
-    background-color: #2980b9;
+  background-color: #2980b9;
 }
 
 /* Estilos para o cabeçalho da tabela */
 th {
-    background-color: #f2f2f2;
-
+  background-color: #55aedb;
 }
 
 .header h1 {
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #3498db;
-    border-radius: 10rem;
-    margin: 0 auto;
-    width: 40%;
-    max-height: 50%;
-    max-width: 50%;
-    padding: 0.8rem;
-    color: #fff;
-    text-align: center;
-    margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #3498db;
+  border-radius: 10rem;
+  margin: 0 auto;
+  width: 40%;
+  max-height: 50%;
+  max-width: 50%;
+  padding: 0.8rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .menu {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 2rem;
 }
 
 button#botaoCadastro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    border-radius: 2rem;
-    background-color: #3498db;
-    color: #fff;
-    padding: 0.5rem;
-    width: 120px;
-    margin-top: 20px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-radius: 2rem;
+  background-color: #3498db;
+  color: #fff;
+  padding: 0.5rem;
+  width: 120px;
+  margin-top: 20px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+button#botaoCadastro:hover {
+  background-color: #2980b9;
 }
 
 button#botaoCadastro:hover {
-    background-color: #2980b9;
+  background-color: #2980b9;
 }
 
 /* Estilos para o link Sair e Acessar */
-a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px;
-    width: 50%;
-    border-radius: 5px;
-    margin-top: 20px;
-    text-decoration: none;
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px;
-    width: 120px;
+a#botaosair {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  border-radius: 2rem;
+  background-color: #3498db;
+  color: #fff;
+  padding: 0.5rem;
+  width: 90px;
+  margin-top: 20px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+a#botaosair:hover {
+  background-color: #ad3636;
+}
+.sair {
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+  text-decoration: none;
 }
 
 #cadastro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    background-color: #3498db;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    margin: 0 auto;
-    border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 5px;
 }
 
 .conteudo.menu {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background-color: #3498db;
-    margin: 0 auto;
-    width: 50%;
-    border-radius: 10px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 0 auto;
+  width: 50%;
+  max-width: 60%;
+  border-radius: 10px;
+  padding: 20px;
+  align-content: center;
 }
 
+.atividades {
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  text-decoration: none;
+}
 .conteudo.menu a {
-    margin: 0 auto;
+  color: black;
+  margin: 0 auto;
+  font-size: 32px;
 }
 
 table {
-    border-collapse: collapse;
-    width: 100%;
-    color: black;
+  border-collapse: collapse;
+  width: 100%;
+  color: black;
 }
-
 tr {
-    text-align: center;
-    background-color: #f2f2f2;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  align-content: center;
+  background-color: #f2f2f2;
+}
+tr:last-child {
+  border-bottom: 2px solid #0099ff;
+  border-radius: 20px 20px 20px 20px;
 }
 table th:first-of-type {
-    border-radius: 20px 0px 0px 0px;
+  border-radius: 20px 0px 0px 0px;
 }
 
 table th:last-of-type {
-    border-radius: 0px 20px 0px 0px;
+  border-radius: 0px 20px 0px 0px;
 }
 td:last-of-type button {
-    border-radius: 0px 20px 0px 0px;
-}
-table {
-    border-radius: 0px 0px 20px 0px;
-}
-th,
-td {
-    padding: 8px;
+  border-radius: 20px 0px 0px 20px;
 }
 
-a:hover {
-    background-color: #2980b9;
+th,
+td {
+  padding: 8px;
+  font-size: 18px;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10rem;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.5rem;
+  width: 120px;
 }

@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <!-- meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAEP - Carregando...</title>
     <meta name="author" content="Jvdeamo">
 </head>
 <?php
@@ -48,10 +49,12 @@ try {
 
         if (isset($_GET['error']) && $_GET['error'] == '1001') {
             echo "<div class='failed' style='text-align: center; font-size:20px; font-weight:600;'>Usuário ou senha inválidos.</div>";
+            header("Location: index.html");
         }
     }
     if (isset($_GET['error']) && $_GET['error'] == '1001') {
         echo "<div class='failed' style='text-align: center; font-size:20px; font-weight:600;'>Usuário ou senha inválidos.</div>";
+        header("Location: index.html");
     }
 } catch (PDOException $e) {
     echo "Erro: " . $e->getMessage();
