@@ -38,13 +38,21 @@ try {
         if ($usuario) {
             // O login é bem-sucedido, redirecione para a página de menu
             $_SESSION['usuario'] = $usuario;
-            header('Location: menu.php');
+            header('Location: ../temp/pages/menu.php');
+            exit;
+        } else {
+            // O login falhou, redirecione para a página de login com uma mensagem de erro
+            header('Location: ../temp/pages/index.html?error=1001');
             exit;
         }
         if ($usuario) {
             // O login é bem-sucedido, redirecione para a página de menu
             $_SESSION['usuario'] = $usuario;
-            header('Location: menu.php');
+            header('Location: ../temp/pages/menu.php');
+            exit;
+        } else {
+            // O login falhou, redirecione para a página de login com uma mensagem de erro
+            header('Location: ../temp/pages/index.html?error=1001');
             exit;
         }
 

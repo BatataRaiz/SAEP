@@ -35,18 +35,21 @@ try {
 <head>
     <meta charset="UTF-8">
     <title>Menu SAEP</title>
-    <link rel="stylesheet" href="src\resources\styles\menu.css">
-</head>
+    <link rel="stylesheet" href="../../resources/styles/menu.css">
 
 <body>
     <div class="sair">
         <a id="botaosair" onclick="redirecionarParaSair()">Sair</a>
     </div>
     <div class="header">
-        <h1>Bem-vindo ao sistema SAEP, <?php if (isset($_SESSION['usuario'])) {
-                                            echo $_SESSION['usuario']['senha'];
-                                        } ?>!</h1>
+        <div class="img-container">
+            <img src="https://images.hdqwalls.com/wallpapers/bthumb/material-style-8k-rk.jpg" alt="" />
+            <h1>Bem-vindo ao sistema SAEP, <?php if (isset($_SESSION['usuario'])) {
+                                                echo $_SESSION['usuario']['senha'];
+                                            } ?>!</h1>
+        </div>
     </div>
+
     <div class="menu">
         <button type="button" id="botaoCadastro" onclick="redirecionarParaCadastros()">Cadastrar Atividades</button>
     </div>

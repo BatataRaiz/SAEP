@@ -6,7 +6,7 @@ session_start();
 // Configurações do banco de dados
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = ""; 
 $database = "saepDatabase";
 
 // Conectar ao banco de dados
