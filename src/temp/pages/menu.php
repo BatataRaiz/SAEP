@@ -38,15 +38,15 @@ try {
     <link rel="stylesheet" href="../../resources/styles/menu.css">
 
 <body>
-    <div class="sair">
-        <a id="botaosair" onclick="redirecionarParaSair()">Sair</a>
-    </div>
     <div class="header">
         <div class="img-container">
             <img src="https://images.hdqwalls.com/wallpapers/bthumb/material-style-8k-rk.jpg" alt="" />
             <h1>Bem-vindo ao sistema SAEP, <?php if (isset($_SESSION['usuario'])) {
                                                 echo $_SESSION['usuario']['senha'];
                                             } ?>!</h1>
+        </div>
+        <div class="sair">
+        <button id="botaoSair" class="botao-sair">Sair</button>
         </div>
     </div>
 
@@ -78,7 +78,7 @@ try {
     <h3>Imagem com Desfoque</h3>
     <img src="../Images/tartaruga.jpg" alt="Tartaruga" class="blur" name="tartaruga" id="tartaruga">
                 -->
-    <script src="../js/menu.js">
+    <script src="../../resources/js/menu.js">
     </script>
     <div class="footer">
         <div class="footerInfo">

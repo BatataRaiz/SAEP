@@ -2,6 +2,7 @@
   font-family: 'Josefin Sans';
   src: url('../fonts/JosefinSans-VariableFont_wght.ttf') format('truetype');
 }
+
 body {
   background-color: #f2f2f2;
   margin: 0;
@@ -63,10 +64,14 @@ th {
 
 .header {
   position: relative;
-  text-align: center; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
   color: white;
 }
-  
+
 
 .header h1 {
   position: absolute;
@@ -74,8 +79,10 @@ th {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px;
-  border-radius: 5px; /* Arredondar as bordas */
-  width: 100%; /* Ajustar a largura conforme necessário */
+  border-radius: 5px;
+  /* Arredondar as bordas */
+  width: 100%;
+  /* Ajustar a largura conforme necessário */
 }
 
 .menu {
@@ -113,11 +120,14 @@ button#botaoCadastro:hover {
 }
 
 /* Estilos para o link Sair e Acessar */
-a#botaosair {
+.botao-sair {
+  text-decoration: none;
+  /* Remova a decoração de texto */
+  transition: color 0.3s;
+  /* Transição suave da cor ao passar o mouse */
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
   text-align: center;
   border-radius: 2rem;
   background-color: #3498db;
@@ -128,17 +138,16 @@ a#botaosair {
   text-decoration: none;
   border: none;
   cursor: pointer;
+
+}
+.botao-sair:hover {
+  color: #0004ff;
+  background-color: #007bff;
 }
 
-a#botaosair:hover {
-  background-color: #ad3636;
-}
-
-.sair {
-  float: right;
-  margin-right: 20px;
-  margin-top: 20px;
-  text-decoration: none;
+/* Alinhamento à direita para a div "sair" */
+#botaosair {
+  text-align: right;
 }
 
 #cadastro {

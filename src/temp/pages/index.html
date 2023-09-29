@@ -10,13 +10,20 @@
 </head>
 
 <body>
-    <div class="login-container">
+    <div class="form-container">
         <h1>Login SAEP</h1>
         <form action="./../../includes/login.php" method="POST" id="loginForm" class="loginForm">
-            <label for="usuario">Login:</label>
-            <input type="text" maxlength="42" id="nome" name="usuario" placeholder="Digite seu nome" required
-                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite aqui seu nome'" autocomplete="off" />
-            <br>
+            <div id="user-container">
+                <label for="usuario">Login:</label>
+                <input type="text" maxlength="42" id="nome" name="usuario" placeholder="Digite seu nome" required
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite aqui seu nome'"
+                    autocomplete="off" />
+                <div id="userError" class="error">
+
+                </div>
+                <button type="button" id="botaoContinuar">Avançar</button>
+            </div>
+
 
             <!-- Campo de senha oculto inicialmente -->
             <div id="senha-container">
@@ -25,7 +32,7 @@
                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite sua senha'" autocomplete="off" />
             </div>
 
-            <input type="submit" value="Entrar">
+            <input type="submit" value="Entrar" id="acessar" class="botaoAcessar">
         </form>
         <div id="falseMsg" class="failed"></div>
         <div id="trueMsg" class="success"></div>
