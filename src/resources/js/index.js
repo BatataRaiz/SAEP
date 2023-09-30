@@ -52,6 +52,8 @@ function botaoAcessar() {
     botaoAcessarElement.style.fontSize = '16px';
     botaoAcessarElement.style.cursor = 'pointer';
     botaoAcessarElement.style.margin = '0 auto';
+    botaoAcessarElement.style.fontFamily = 'Josefin Sans';
+
     botaoAcessarElement.addEventListener('mouseenter', function () {
         botaoAcessarElement.style.backgroundColor = '#0069d9';
     });
