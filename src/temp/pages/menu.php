@@ -36,6 +36,7 @@ try {
     <meta charset="UTF-8">
     <title>Menu SAEP</title>
     <link rel="stylesheet" href="../../resources/styles/menu.css">
+    <link rel="icon" href="../../resources/images/SAEP.ico" type="image/x-icon">
 
 <body>
     <div class="header">

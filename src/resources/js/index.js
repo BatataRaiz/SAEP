@@ -5,6 +5,7 @@ function variaveis() {
     const senhaContainer = document.getElementById('senha-container');
     const userMsg = document.getElementById('userError');
     const botaoAcessarElement = document.getElementById('acessar');
+    const msgErro = document.getElementById('falseMsg');
     let divLogin; // Declare a variável divLogin aqui
     return {
         nomeInput,
@@ -14,6 +15,7 @@ function variaveis() {
         userMsg,
         botaoAcessarElement,
         divLogin,
+        msgErro,
     };
 }
 const variaveisObj = variaveis();
@@ -23,6 +25,7 @@ const botaoContinuar = variaveisObj.botaoContinuar;
 const userContainer = variaveisObj.userContainer;
 const senhaContainer = variaveisObj.senhaContainer;
 const userMsg = variaveisObj.userMsg;
+const msgErro = variaveisObj.msgErro;
 let divLogin = variaveisObj.divLogin;
 function criarDivMensagem() {
     if (!divLogin) {
@@ -33,7 +36,7 @@ function criarDivMensagem() {
 }
 function divMensagem() {
     divLogin.innerHTML = 'Digite o usuário.';
-    divLogin.style.color = 'red';
+    divLogin.style.color = '#007bff';
     divLogin.style.fontSize = '20px';
     divLogin.style.fontWeight = 'bold';
     divLogin.style.marginTop = '10px';
@@ -72,6 +75,9 @@ botaoContinuar.addEventListener('click', function () {
         userContainer.style.display = 'none';
         divLogin.style.display = 'none'; // Oculta a mensagem de erro
         botaoAcessar();
+        // mensagem de usuário inválido deve ser ocultada
+        msgErro.style.visibility = 'hidden';
+        msgErro.style.display = 'none';
     } else {
         divMensagem();
         senhaContainer.style.display = 'none';
@@ -87,3 +93,19 @@ nomeInput.addEventListener('input', function () {
         divLogin.style.display = 'none';
     }
 });
+
+function indexError() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var erroParam = urlParams.get('error');
+
+    if (erroParam === '1001') {
+        document.title = 'Login SAEP'; // Alterar o título da página
+        //window.location.href = 'login.html';
+        msgErro.textContent = 'Usuário ou senha inválidos';
+        msgErro.classList.add('erro'); // Adicionar a classe 'erro' ao elemento
+        msgErro.style.visibility = 'visible'; // Exibir o elemento
+        msgErro.style.display = 'block'; // Exibir o elemento
+        history.replaceState(null, 'Login SAEP', 'index.html');
+    };
+}
+indexError();

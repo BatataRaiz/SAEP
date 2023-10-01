@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Add viewport meta tag -->
     <link rel="stylesheet" href="../../resources/styles/index.css">
+    <link rel="icon" href="../../resources/images/SAEP.ico" type="image/x-icon">
+
     <title>Login SAEP</title>
 </head>
 
@@ -16,8 +18,7 @@
             <div id="user-container">
                 <label for="usuario">Login:</label>
                 <input type="text" maxlength="42" id="nome" name="usuario" placeholder="Digite seu nome" required
-                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite aqui seu nome'"
-                    autocomplete="off" />
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu nome'" autocomplete="off" />
                 <div id="userError" class="error">
 
                 </div>
@@ -30,13 +31,16 @@
                 <label for="senha">Senha:</label>
                 <input type="password" maxlength="62" id="senha" name="senha" placeholder="Digite sua senha" required
                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite sua senha'" autocomplete="off" />
+                <div id="divAcessar" class="botaoAcessar"><input type="submit" value="Entrar" id="acessar"
+                        class="botaoPrincipal">
+                </div>
             </div>
-
-            <input type="submit" value="Entrar" id="acessar" class="botaoPrincipal">
+            <br>
         </form>
-        <div id="falseMsg" class="failed"></div>
-        <div id="trueMsg" class="success"></div>
-        <script src="../../resources/js/index.js"></script>
+    </div>
+    <div id="falseMsg" class="failed"></div>
+    <div id="trueMsg" class="success"></div>
+    <script src="../../resources/js/index.js"></script>
 
 </body>
 
