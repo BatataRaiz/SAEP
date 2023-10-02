@@ -43,7 +43,8 @@ nav {
   filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.3));
 }
 
-.logo {}
+.logo {
+}
 
 .logo img {
   width: 10rem;
@@ -113,7 +114,6 @@ nav {
   color: #fff;
 }
 
-
 .saudacao {
   position: relative;
   display: flex;
@@ -124,7 +124,8 @@ nav {
   color: white;
 }
 
-.saudacao .img-container {}
+.saudacao .img-container {
+}
 
 .saudacao h1 {
   position: absolute;
@@ -142,7 +143,6 @@ nav {
   display: grid;
   justify-content: center;
   align-items: center;
-  background-color: white;
   margin: 0 auto;
   width: 50%;
   max-width: 60%;
@@ -163,7 +163,6 @@ nav {
   margin-top: 20px;
   text-decoration: none;
 }
-
 
 table {
   border-collapse: collapse;
@@ -221,7 +220,6 @@ button:hover {
 th {
   background-color: #55aedb;
 }
-
 
 #cadastro {
   display: flex;

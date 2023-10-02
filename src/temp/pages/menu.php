@@ -46,9 +46,9 @@ try {
         <nav>
             <div class="navbar-container">
                 <div class="logo">
-                    <strong>Bem-vindo, <?php if (isset($_SESSION['usuario'])) {
+                    <strong>Bem-vindo <?php if (isset($_SESSION['usuario'])) {
                                             echo $_SESSION['usuario']['senha'];
-                                        } ?>.</strong>
+                                        } ?></strong>
                     <br>
                     <img src="../../resources/images/SAEP.png" alt="Logo SAEP" class="logo">
                 </div>
