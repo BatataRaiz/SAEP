@@ -3,11 +3,172 @@
   src: url("../fonts/JosefinSans-VariableFont_wght.ttf") format("truetype");
 }
 
-body {
-  background-color: #f2f2f2;
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.2rem;
+}
+
+nav {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.5rem;
+  border: 1px solid #c0c0c0;
+  border-radius: 2rem;
+  filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.3));
+}
+
+.logo {}
+
+.logo img {
+  width: 10rem;
+  height: 140px;
+  margin: 0 auto;
+  max-width: 10rem;
+  height: auto;
+  border-bottom: 1px solid #000000;
+}
+
+.logo strong {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto;
+  color: #000;
+}
+
+.menu {
+  border-width: 1px;
+  /* Define a largura da borda para 1 pixel */
+}
+
+.menuBotoes ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0.8rem;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0.5rem;
+  margin-right: 20px;
+  border-radius: 2rem;
+}
+
+.menu li a button {
+  transition: background-color 0.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 2rem;
+  background-color: #000000;
+  color: #fff;
+  padding: 0.5rem;
+  width: 140px;
+  margin-top: 20px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menu li a button:hover {
+  background-color: #007bff;
+}
+
+.menu li a button.active {
+  background-color: #000000;
+  /* Cor ativa */
+  color: #fff;
+}
+
+
+.saudacao {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.saudacao .img-container {}
+
+.saudacao h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border-radius: 5px;
+  /* Arredondar as bordas */
+  width: 100%;
+  /* Ajustar a largura conforme necessário */
+}
+
+.conteudo {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 0 auto;
+  width: 50%;
+  max-width: 60%;
+  border-radius: 10px;
+  padding: 20px;
+  align-content: center;
+}
+
+.conteudo a {
+  color: black;
+  margin: 0 auto;
+  font-size: 32px;
+}
+
+.atividades {
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  color: black;
 }
 
 #tartaruga {
@@ -23,7 +184,6 @@ td button {
   padding: 10px 20px;
   cursor: pointer;
   margin: 0 auto;
-  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,7 +214,7 @@ td button {
 /* Estilos para os botões Excluir e Visualizar */
 
 button:hover {
-  background-color: #2980b9;
+  background-color: #007bff;
 }
 
 /* Estilos para o cabeçalho da tabela */
@@ -62,91 +222,6 @@ th {
   background-color: #55aedb;
 }
 
-.header {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
-
-.header h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px;
-  border-radius: 5px;
-  /* Arredondar as bordas */
-  width: 100%;
-  /* Ajustar a largura conforme necessário */
-}
-
-.menu {
-  display: flex;
-  align-items: center;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  border-radius: 2rem;
-}
-
-button#botaoCadastro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  text-align: center;
-  border-radius: 2rem;
-  background-color: #3498db;
-  color: #fff;
-  padding: 0.5rem;
-  width: 120px;
-  margin-top: 20px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-}
-
-button#botaoCadastro:hover {
-  background-color: #2980b9;
-}
-
-button#botaoCadastro:hover {
-  background-color: #2980b9;
-}
-
-/* Estilos para o link Sair e Acessar */
-.botao-sair {
-  text-decoration: none;
-  /* Remova a decoração de texto */
-  transition: color 0.3s;
-  /* Transição suave da cor ao passar o mouse */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border-radius: 2rem;
-  background-color: #3498db;
-  color: #fff;
-  padding: 0.5rem;
-  width: 90px;
-  margin-top: 20px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-}
-.botao-sair:hover {
-  color: #0004ff;
-  background-color: #007bff;
-}
-
-/* Alinhamento à direita para a div "sair" */
-#botaosair {
-  text-align: right;
-}
 
 #cadastro {
   display: flex;
@@ -159,38 +234,6 @@ button#botaoCadastro:hover {
   text-align: center;
   margin: 0 auto;
   border-radius: 5px;
-}
-
-.conteudo.menu {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  margin: 0 auto;
-  width: 50%;
-  max-width: 60%;
-  border-radius: 10px;
-  padding: 20px;
-  align-content: center;
-}
-
-.atividades {
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  text-decoration: none;
-}
-
-.conteudo.menu a {
-  color: black;
-  margin: 0 auto;
-  font-size: 32px;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  color: black;
 }
 
 tbody {
@@ -260,4 +303,141 @@ td {
   mask-repeat: no-repeat;
   object-position: center;
   object-fit: scale-down;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  /* Cor de fundo opcional */
+  padding: 10px;
+  /* Espaçamento interno opcional */
+  border-top: 1px solid #ccc;
+  /* Borda superior opcional */
+  text-align: center;
+  z-index: 999;
+  /* Defina um valor alto para o z-index */
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10rem;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+footer p {
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+/*
+teste
+*/
+#toggleSidebar {
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+  transform: rotate(45deg);
+  cursor: pointer;
+  z-index: 9999;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.toggleSidebar:active {
+  transform: rotate(135deg);
+}
+
+#toggleSidebar:hover {
+  background-color: #0056b3;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  /* Inicialmente oculto */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #ffffff;
+  transition: left 0.3s ease;
+  /* Outros estilos da Sidebar */
+  /* Adiciona uma transição suave para a largura */
+}
+
+#sidebar.open {
+  left: 0;
+  /* Expandido */
+}
+
+#sidebar button {
+  display: block;
+  padding: 10px;
+  font-size: 1.05em;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  background-color: #444;
+  border: none;
+  color: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px solid #555;
+  padding: 12px;
+}
+
+#sidebar a {
+  text-decoration: none;
+}
+#sidebar button:hover {
+  background-color: #555;
+}
+#menuSuspensoContato {
+  display: none;
+}
+#menuSuspensoAjuda {
+  display: none;
+}
+main {
+  margin-left: 0;
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+#headerContent.expanded {
+  margin-left: 250px;
+  /* Ajuste a margem conforme necessário para acomodar a largura da Sidebar */
+  /* Outros estilos para ajustar o conteúdo principal */
+  transition: margin-left 0.3s;
+}
+
+#mainContent.expanded {
+  margin-left: 250px;
+  /* Ajuste a margem conforme necessário para acomodar a largura da Sidebar */
+  /* Outros estilos para ajustar o conteúdo principal */
+}
+
+main.sidebar-open {
+  margin-left: 250px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    display: block;
+    /* Altere para 'block' ou outro valor adequado para o cabeçalho em telas pequenas */
+    /* Outros estilos do cabeçalho em telas pequenas */
+  }
 }
