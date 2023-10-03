@@ -13,18 +13,24 @@
 
 body {
   background-color: #f2f2f2;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-size: 16px; /* Defina o tamanho de fonte base */
 }
 
 header {
   display: flex;
-  justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0.2rem;
+  padding: 0.5rem; /* Aumente o espaço interno para melhorar a adaptabilidade */
+  justify-content: space-evenly;
 }
 
 nav {
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -43,8 +49,7 @@ nav {
   filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.3));
 }
 
-.logo {
-}
+.logo {}
 
 .logo img {
   width: 10rem;
@@ -124,8 +129,7 @@ nav {
   color: white;
 }
 
-.saudacao .img-container {
-}
+.saudacao .img-container {}
 
 .saudacao h1 {
   position: absolute;
@@ -144,8 +148,8 @@ nav {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  width: 50%;
-  max-width: 60%;
+  width: 100%;
+  max-width: 100%;
   border-radius: 10px;
   padding: 20px;
   align-content: center;
@@ -272,19 +276,6 @@ td {
   font-size: 18px;
 }
 
-.footer {
-  display: flex;
-  align-items: center;
-  color: #000000;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10rem;
-  width: 50%;
-  margin: 0 auto;
-  padding: 0.5rem;
-  width: 120px;
-}
-
 .img-container {
   position: relative;
   width: 300px;
@@ -302,39 +293,6 @@ td {
   object-position: center;
   object-fit: scale-down;
 }
-
-footer {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f0f0f0;
-  /* Cor de fundo opcional */
-  padding: 10px;
-  /* Espaçamento interno opcional */
-  border-top: 1px solid #ccc;
-  /* Borda superior opcional */
-  text-align: center;
-  z-index: 999;
-  /* Defina um valor alto para o z-index */
-}
-
-.footer {
-  display: flex;
-  align-items: center;
-  color: #000000;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10rem;
-  width: 50%;
-  margin: 0 auto;
-  padding: 0.5rem;
-}
-
-footer p {
-  margin: 0 auto;
-  font-size: 18px;
-}
-
 /*
 teste
 */
@@ -400,15 +358,19 @@ teste
 #sidebar a {
   text-decoration: none;
 }
+
 #sidebar button:hover {
   background-color: #555;
 }
+
 #menuSuspensoContato {
   display: none;
 }
+
 #menuSuspensoAjuda {
   display: none;
 }
+
 main {
   margin-left: 0;
   padding: 20px;
