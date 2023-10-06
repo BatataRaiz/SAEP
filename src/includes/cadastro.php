@@ -16,8 +16,8 @@ try {
     // Processar o envio do formulário
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Obter os dados do formulário
-        $atividade_nome = $_POST['nome'];
-        $atividade_funcionario = $_POST['funcionario'];
+        $atividade_nome = $_POST['nomeAtividade'];
+        $atividade_funcionario = $_POST['nomeFuncionario'];
         $atividade_detalhes = $_POST['detalhes'];
 
         // Preparar a consulta SQL

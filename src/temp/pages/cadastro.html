@@ -16,18 +16,29 @@
 <body>
     <main>
         <form action="../../includes/cadastro.php" method="post">
-            <label for="nome">Nome da Atividade:</label>
-            <input type="text" id="nome" name="nome">
-            <br>
-            <label for="funcionario">Funcionário:</label>
-            <input type="text" id="funcionario" name="funcionario">
-            <br>
-            <label for="detalhes">Detalhes:</label>
-            <input type="text" id="detalhes" name="detalhes">
-            <input type="submit" value="Cadastrar">
+            <div class="titulo">
+                <h1>Cadastro de Atividades</h1>
+            </div>
+            <div class="fields">
+                <div class="nomeAtividade">
+                    <label for="nomeAtividade">Nome da Atividade:</label>
+                    <input type="text" id="nomeAtividade" name="nomeAtividade">
+                </div>
+                <div class="nomeFuncionario">
+                    <label for="nomeFuncionario">Nome do Funcionário:</label>
+                    <input type="text" id="nomeFuncionario" name="nomeFuncionario">
+                </div>
+                <div class="detalhes">
+                    <label for="detalhes">Detalhes:</label>
+                    <input type="text" id="detalhes" name="detalhes">
+                </div>
+                <div class="botaoCadastro">
+                    <button type="submit" name="cadastrar">Cadastrar</button>
+                </div>
+            </div>
         </form>
         <div class="cadastro">
-            
+
         </div>
     </main>
 
