@@ -21,3 +21,5 @@ loadCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.c
 // Carregar o arquivo JavaScript
 loadScript("https://code.jquery.com/jquery-3.7.1.min.js");
 
+//loadScript("../../resources/js/auth.js");
+

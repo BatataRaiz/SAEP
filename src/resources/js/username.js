@@ -1,6 +1,6 @@
 // menu.js
 
-// Espere até que o DOM esteja totalmente carregado
+/* Espere até que o DOM esteja totalmente carregado
 document.addEventListener("DOMContentLoaded", function () {
 
 
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $.ajax({
         url: '../../includes/auth.php',
         type: 'POST',
-        data: { /* dados a serem enviados, se necessário */ },
+        data: { /* dados a serem enviados, se necessário  },
         dataType: 'json', // Defina o tipo de dados esperado como JSON
         success: function (response) {
             // Verifique a resposta JSON
@@ -25,4 +25,22 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error('Erro na chamada AJAX:', status, error);
         }
     });
+});
+*/
+document.addEventListener("load", function () {
+    fetch("../../includes/menuUser.php")
+        .then((response) => {
+            console.log(response); // Adicione esta linha para depuração
+            return response.text();
+        }
+        )
+        .then((data) => {
+            document.getElementById("username").innerHTML = data;
+        }
+        )
+        .catch((error) => {
+            console.error("Erro ao  carregar o usuário:", error);
+        }
+        );
+
 });
