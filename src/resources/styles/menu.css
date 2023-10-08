@@ -18,14 +18,16 @@ body {
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-  font-size: 16px; /* Defina o tamanho de fonte base */
+  font-size: 16px;
+  /* Defina o tamanho de fonte base */
 }
 
 header {
   display: flex;
   align-items: center;
   text-align: center;
-  padding: 0.5rem; /* Aumente o espaço interno para melhorar a adaptabilidade */
+  padding: 0.5rem;
+  /* Aumente o espaço interno para melhorar a adaptabilidade */
   justify-content: space-evenly;
 }
 
@@ -129,7 +131,9 @@ nav {
   color: white;
 }
 
-.saudacao .img-container {}
+.saudacao .img-container {
+
+}
 
 .saudacao h1 {
   position: absolute;
@@ -293,6 +297,7 @@ td {
   object-position: center;
   object-fit: scale-down;
 }
+
 /*
 teste
 */
@@ -394,10 +399,72 @@ main.sidebar-open {
   margin-left: 250px;
 }
 
+#menu-icon {
+  display: none;
+  /* Oculta o ícone em dispositivos desktop */
+}
+
 @media screen and (max-width: 768px) {
+
+  .navbar-container {
+    padding: 0.2rem;
+    /* Reduzir o espaçamento interno do contêiner */
+    border-radius: 1rem;
+    /* Reduzir a borda do contêiner */
+  }
+
+  .logo img {
+    width: 8rem;
+    /* Reduzir o tamanho da imagem do logo */
+    height: 120px;
+    /* Reduzir a altura da imagem do logo */
+  }
+
+  .logo strong {
+    font-size: 20px;
+    /* Reduzir o tamanho da fonte do nome de usuário */
+  }
+
+  .menu li a {
+    font-size: 16px;
+    /* Reduzir o tamanho da fonte dos links do menu */
+    padding: 0.3rem;
+    /* Reduzir o espaçamento interno dos links do menu */
+    margin-right: 10px;
+    /* Reduzir a margem direita entre os links do menu */
+  }
+
+  .menu li a button {
+    width: 120px;
+    /* Reduzir a largura dos botões do menu */
+    margin-top: 10px;
+    /* Reduzir o espaçamento superior dos botões do menu */
+    font-size: 18px;
+    /* Reduzir o tamanho da fonte dos botões do menu */
+  }
+
   header {
+    background-color: #333;
+    /* Cor de fundo do novo header */
+    padding: 10px 20px;
+    /* Espaçamento interno do novo header */
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* Estilos para o elemento <a> */
+  /* Estilos para o ícone do menu */
+  i.fas.fa-bars.fa-2x {
+    font-size: 24px;
+    /* Tamanho do ícone do menu */
+  }
+
+  #menu-icon {
+    place-items: center;
     display: block;
-    /* Altere para 'block' ou outro valor adequado para o cabeçalho em telas pequenas */
-    /* Outros estilos do cabeçalho em telas pequenas */
+    color: #fff;
+    /* Cor do ícone do menu */
+    text-decoration: none;
+    /* Remova o sublinhado do link */
   }
 }

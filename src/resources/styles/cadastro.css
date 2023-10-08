@@ -86,3 +86,16 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+@media screen and (max-width: 768px) {
+    form {
+        width: 80%;
+    }
+    input[type="text"] {
+        width: 100%;
+    }
+    button[type="submit"] {
+        width: 100%;
+    }
+}
+    

@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="../../resources/styles/menu.css">
     <link rel="stylesheet" href="../partials/footer.css">
     <link rel="icon" href="../../resources/images/SAEP.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Inclua o link para a biblioteca Font Awesome -->
-
+    <script src="../../resources/js/load-resources.js"></script>
+    <script src="../../resources/js/contentLoad.js"></script>
 </head>
 
 <body>
@@ -28,7 +27,10 @@
                 </div>
                 <div class="menu">
                     <div class="menuBotoes">
-                        <ul>
+                        <a href="#" id="menu-icon">
+                            <i class="fas fa-bars fa-2x"></i>
+                        </a>
+                        <ul class="navbar-menu" id="menu-list">
                             <li><a href="#">
                                     <button type="button" id="botaoHome" class="botao-home">Home</button>
                                 </a></li>
@@ -58,6 +60,7 @@
             </div>
         </nav>
     </header>
+
     <main id="mainContent">
         <button type="button" title="botaoSidebar" id="toggleSidebar"><i class="fas fa-bars"></i>
             <!-- Use a classe de ícone do Font Awesome -->
@@ -97,8 +100,40 @@
     </main>
     <!--
     <h3>Imagem com Desfoque</h3>
-    <img src="../Images/tartaruga.jpg" alt="Tartaruga" class="blur" name="tartaruga" id="tartaruga">
+    <img src="../Images/tartarugmenu-lista.jpg" alt="Tartaruga" class="blur" name="tartaruga" id="tartaruga">
                 -->
+    <script>
+        $(document).ready(function () {
+            // Define a função toggleDropdown
+            function toggleDropdown() {
+                $("#menu-list").slideToggle(); // Mostra ou oculta a lista suspensa
+            }
+
+            // Adiciona um evento de clique ao elemento com o id "menu-icon"
+            $("#menu-icon").click(toggleDropdown);
+
+            // Adiciona um evento de redimensionamento ao documento
+            $(window).on("resize", function () {
+                // Verifica se a largura da janela é maior que 768 pixels
+                if ($(window).width() > 768) {
+                    // Mostra a lista suspensa
+                    $("#menu-list").show();
+                } else {
+                    // Oculta a lista suspensa
+                    $("#menu-list").hide();
+                }
+            });
+        });
+        // Obtenha o botão do menu e o elemento navbar
+        const menuBtn = document.getElementById('menu-icon');
+        const navbar = document.querySelector('.navbar');
+
+        // Manipule o evento de clique do botão
+        menuBtn.addEventListener('click', function () {
+            // Adicione a classe "rounded" ao elemento navbar
+            navbar.classList.remove('rounded');
+        });
+    </script>
     <script src="../../resources/js/menu.js"></script>
     <script src="../../resources/js/sidebarMenu.js"></script>
     <script src="../../resources/js/footer.js"></script>
