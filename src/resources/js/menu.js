@@ -1,6 +1,4 @@
 // Autor: jvdeamo
-/* Importar Bootstrap */
-import 'bootstrap';
 
 const botaoSair = document.getElementById('botaosair');
 function redirecionarParaCadastros() {

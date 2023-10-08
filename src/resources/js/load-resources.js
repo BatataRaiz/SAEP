@@ -1,5 +1,4 @@
 // Função para adicionar um arquivo CSS ao cabeçalho do documento
-// Função para adicionar um arquivo CSS ao cabeçalho do documento
 function loadCSS(url) {
     var link = document.createElement("link");
     link.rel = "stylesheet";
@@ -21,3 +20,4 @@ loadCSS("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.c
 
 // Carregar o arquivo JavaScript
 loadScript("https://code.jquery.com/jquery-3.7.1.min.js");
+

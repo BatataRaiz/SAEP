@@ -7,9 +7,10 @@
     <title>Menu SAEP</title>
     <link rel="stylesheet" href="../../resources/styles/menu.css">
     <link rel="stylesheet" href="../partials/footer.css">
-    <link rel="icon" href="../../resources/images/SAEP.ico" type="image/x-icon">
-    <script src="../../resources/js/load-resources.js"></script>
+    <link rel="icon" href="../../resources/images/saep.ico" type="image/x-icon" />
     <script src="../../resources/js/contentLoad.js"></script>
+    <script src="../../resources/js/load-resources.js"></script>
+
 </head>
 
 <body>
@@ -17,11 +18,7 @@
         <nav>
             <div class="navbar-container">
                 <div class="logo">
-                    <strong>Bem-vindo
-                        <?php if (isset($_SESSION['usuario'])) {
-                                            echo $_SESSION['usuario']['senha'];
-                                        } ?>
-                    </strong>
+                    <strong>Bem-vindo <span id="username"></span></strong><script defer src="../../resources/js/username.js"></script>
                     <br>
                     <img src="../../resources/images/SAEP.png" alt="Logo SAEP" class="logo">
                 </div>
