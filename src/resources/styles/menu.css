@@ -131,9 +131,7 @@ nav {
   color: white;
 }
 
-.saudacao .img-container {
-
-}
+.saudacao .img-container {}
 
 .saudacao h1 {
   position: absolute;
@@ -402,6 +400,10 @@ main.sidebar-open {
 #menu-icon {
   display: none;
   /* Oculta o ícone em dispositivos desktop */
+}
+
+a:-webkit-any-link {
+  cursor:default;
 }
 
 @media screen and (max-width: 768px) {

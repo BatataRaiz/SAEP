@@ -46,10 +46,20 @@ try {
         <tr>
             <td><?php echo $atividade['id']; ?></td>
             <td><?php echo $atividade['nome']; ?></td>
-            <td><button type="button" onclick="excluirAtividade(<?php echo $atividade['funcionario']; ?>)">Excluir</button></td>
-            <td><button type="button" onclick="visualizarAtividade(<?php echo $atividade['detalhes']; ?>)">Visualizar</button></td>
+            <td><button type="button" onclick="excluirAtividade()">Excluir</button></td>
+            <td><button type="button" onclick="visualizarAtividade()">Visualizar</button></td>
         </tr>
     <?php
     }
     ?>
+    <script>
+        function excluirAtividade() {
+            alert("Atividade excluída com sucesso!");
+        }
+
+        function visualizarAtividade() {
+            alert("Atividade visualizada com sucesso!");
+        }
+    </script>
+
 </table>
