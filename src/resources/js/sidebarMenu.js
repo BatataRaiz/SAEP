@@ -33,11 +33,12 @@ btnContato.addEventListener('click', function () {
         menuSuspensoContato.appendChild(contatoDev);
         menuSuspensoContato.style.display = 'block'; // Mostra o menu suspenso
         menuSuspensoContato.style.color = '#fff';
-        menuSuspensoContato.style.marginBottom = '10px';
+        menuSuspensoContato.style.  marginBottom = '10px';
         menuSuspensoContato.style.marginTop = '10px';
         menuSuspensoContato.style.paddingLeft = '40px';
         linkedin.style.lineHeight = '1.5';
         linkedin.style.color = '#11a1df';
+        linkedin.style.cursor = 'pointer';
     } else {
         menuSuspensoContato.style.display = 'none'; // Esconde o menu suspenso
     }

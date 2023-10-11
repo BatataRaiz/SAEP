@@ -26,5 +26,3 @@ $stmt->execute();
 // Redirecionar para a página de atividades
 // No arquivo "excluir.php" após a exclusão bem-sucedida
 echo json_encode(['message' => 'Atividade excluída com sucesso']);
-
-?>

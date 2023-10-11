@@ -40,7 +40,7 @@ function visualizarAtividade() {
     alert("Atividade visualizada com sucesso!");
 }
 function atualizarTabela() {
-    const menuPhpPath = "../../includes/menu.php"; 
+    const menuPhpPath = "../../includes/menu.php";
 
     fetch(menuPhpPath)
         .then((response) => response.text())
