@@ -385,10 +385,12 @@ main {
   /* Ajuste a margem conforme necessário para acomodar a largura da Sidebar */
   /* Outros estilos para ajustar o conteúdo principal */
   transition: margin-left 0.3s;
+  z-index: 999;
 }
 
 #mainContent.expanded {
   margin-left: 250px;
+  z-index: 999;
   /* Ajuste a margem conforme necessário para acomodar a largura da Sidebar */
   /* Outros estilos para ajustar o conteúdo principal */
 }
@@ -403,10 +405,21 @@ main.sidebar-open {
 }
 
 a:-webkit-any-link {
-  cursor:default;
+  cursor: default;
 }
 
 @media screen and (max-width: 768px) {
+  .conteudo {
+    display: grid;
+    justify-content: start;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    align-content: center;
+  }
 
   .navbar-container {
     padding: 0.2rem;
@@ -446,11 +459,15 @@ a:-webkit-any-link {
   }
 
   header {
-    background-color: #333;
     /* Cor de fundo do novo header */
     padding: 10px 20px;
+    width: 100%;
     /* Espaçamento interno do novo header */
     display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+    /* Aumente o espaço interno para melhorar a adaptabilidade */
     justify-content: space-between;
   }
 
@@ -458,6 +475,7 @@ a:-webkit-any-link {
   /* Estilos para o ícone do menu */
   i.fas.fa-bars.fa-2x {
     font-size: 24px;
+    display: none;
     /* Tamanho do ícone do menu */
   }
 
@@ -468,5 +486,17 @@ a:-webkit-any-link {
     /* Cor do ícone do menu */
     text-decoration: none;
     /* Remova o sublinhado do link */
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    align-content: center;
   }
 }

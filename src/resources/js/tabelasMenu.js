@@ -15,3 +15,41 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Erro ao carregar o menu:", error);
         });
 });
+function excluirAtividade(botao) {
+    const atividadeId = botao.getAttribute("data-atividade-id");
+
+    // Certifique-se de que o ID da atividade foi recuperado corretamente
+    console.log("ID da atividade a ser excluída: " + atividadeId);
+
+    const menuPhpPath = "../../includes/excluir.php?id=" + atividadeId;
+
+    fetch(menuPhpPath)
+        .then((response) => response.json())
+        .then((data) => {
+            if (data.message === 'Atividade excluída com sucesso') {
+                alert("Atividade excluída com sucesso!");
+                atualizarTabela(); // Chame a função para atualizar a tabela
+            }
+        })
+        .catch((error) => {
+            console.error("Erro ao excluir atividade:", error);
+        });
+}
+
+function visualizarAtividade() {
+    alert("Atividade visualizada com sucesso!");
+}
+function atualizarTabela() {
+    const menuPhpPath = "../../includes/menu.php"; 
+
+    fetch(menuPhpPath)
+        .then((response) => response.text())
+        .then((data) => {
+            // Substitua o conteúdo da tabela com os dados mais recentes
+            const atividadesContainer = document.querySelector(".atividades");
+            atividadesContainer.innerHTML = data;
+        })
+        .catch((error) => {
+            console.error("Erro ao atualizar a tabela:", error);
+        });
+}

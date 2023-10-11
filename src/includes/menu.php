@@ -26,40 +26,30 @@ try {
 }
 ?> <!-- Código HTML da tabela de atividades -->
 <table>
-    <tr>
-        <th>Número da Atividade</th>
-        <th>Nome da Atividade</th>
-        <th></th>
-        <th></th>
-    </tr>
-    <?php
-    // Query para selecionar todos os registros da tabela 'atividades'
-    $sql = "SELECT * FROM atividades";
-
-    // Preparar e executar a consulta SQL
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute();
-
-    // Iterar pelos resultados e exibi-los na tabela
-    while ($atividade = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    ?>
+    <thead>
         <tr>
-            <td><?php echo $atividade['id']; ?></td>
-            <td><?php echo $atividade['nome']; ?></td>
-            <td><button type="button" onclick="excluirAtividade()">Excluir</button></td>
-            <td><button type="button" onclick="visualizarAtividade()">Visualizar</button></td>
+            <th>Número da Atividade</th>
+            <th>Nome da Atividade</th>
+            <th></th>
+            <th></th>
         </tr>
+    </thead>
     <?php
-    }
+    // Iterar pelos resultados e exibi-los na tabela
+    $stmt = $pdo->prepare("SELECT * FROM atividades");
+    $stmt->execute();
+    $atividade = $stmt->fetchAll(PDO::FETCH_ASSOC);
     ?>
-    <script>
-        function excluirAtividade() {
-            alert("Atividade excluída com sucesso!");
-        }
-
-        function visualizarAtividade() {
-            alert("Atividade visualizada com sucesso!");
-        }
-    </script>
+    <tbody>
+        <?php foreach ($atividade as $atividades) : ?>
+            <tr data-atividade-id="<?php echo $atividades['id']; ?>">
+                <td><?php echo $atividades['id']; ?></td>
+                <td><?php echo $atividades['nome']; ?></td>
+                <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="excluirAtividade(this)">Excluir</button></td>
+                <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="editarAtividade(this)">Editar</button></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+    <script src="../resources/js/tabelasMenu.js"></script>
 
 </table>

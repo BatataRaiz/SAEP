@@ -41,18 +41,18 @@ function newMenu() {
 
     // Substitua o header original pelo novo header
     var originalHeader = document.getElementById("headerContent");
-    originalHeader.parentNode.replaceChild(newHeader, originalHeader);
-}
-// Verifique o tamanho da tela usando window.matchMedia()
-var mediaQuery = window.matchMedia("(max-width: 768px)");
+    originalHeader.parentElement.replaceChild(newHeader, originalHeader);
+    // Verifique o tamanho da tela usando window.matchMedia()
+    var mediaQuery = window.matchMedia("(max-width: 768px)");
 
-// Defina uma função para lidar com a mudança na consulta de mídia
-function menu2(event) {
-    if (event.matches) {
-        // Chame a função para criar o novo header
-        newMenu();
+    // Defina uma função para lidar com a mudança na consulta de mídia
+    function menu2(event) {
+        if (event.matches) {
+            // Chame a função para criar o novo header
+            newMenu();
+        }
     }
-}
 
 // Adicione um ouvinte para o evento "change" da consulta de mídia
 mediaQuery.addEventListener("change", menu2);
+}
