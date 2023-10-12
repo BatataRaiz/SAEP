@@ -24,15 +24,20 @@
             <div class="fields">
                 <div class="nomeAtividade">
                     <label for="nomeAtividade">Nome da Atividade:</label>
-                    <input type="text" id="nomeAtividade" name="nomeAtividade">
+                    <input type="text" maxlength="50" id="nomeAtividade" name="nomeAtividade"
+                        placeholder="Nome da atividade" required onfocus="this.placeholder = ''"
+                        onblur="this.placeholder = 'Nome da atividade'" autocomplete="off">
                 </div>
                 <div class="nomeFuncionario">
                     <label for="nomeFuncionario">Nome do Funcionário:</label>
-                    <input type="text" id="nomeFuncionario" name="nomeFuncionario">
+                    <input type="text" maxlength="50" id="nomeFuncionario" name="nomeFuncionario"
+                        placeholder="Nome do funcionário" required onfocus="this.placeholder = ''"
+                        onblur="this.placeholder = 'Nome do funcionário'" autocomplete="off">
                 </div>
                 <div class="detalhes">
                     <label for="detalhes">Detalhes:</label>
-                    <input type="text" id="detalhes" name="detalhes">
+                    <input type="text" maxlength="50" id="detalhes" name="detalhes" placeholder="Detalhes" required
+                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Detalhes'" autocomplete="off">
                 </div>
                 <div class="botaoCadastro">
                     <button type="submit" name="cadastrar">Cadastrar</button>
@@ -46,5 +51,6 @@
 
 </body>
 <script src="../../resources/js/cadastro.js"></script>
+<script src="../../resources/js/form.js"></script>
 
 </html>
