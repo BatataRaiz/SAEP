@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 
 // Configurar o diretório onde estão os arquivos HTML
-app.use(express.static(path.join(__dirname, 'SAEP', 'src', 'temp', 'pages')));
+app.use(express.static(path.join(__dirname, 'src', 'temp', 'pages')));
 
 // Configurar uma rota para a página index
 app.get('/index', (req, res) => {
