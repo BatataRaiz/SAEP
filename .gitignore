@@ -1,0 +1,4 @@
+src/resources/fonts/*.
+src/node_modules/*.
+src/node_modules/
+node_modules/

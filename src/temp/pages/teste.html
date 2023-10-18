@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste</title>
+    <!-- Add viewport meta tag -->
+    <link rel="stylesheet" href="../../resources/styles/index.css" />
+    <link rel="stylesheet" href="../partials/footer.css">
+
+    <link rel="icon" href="../../resources/images/saep.ico" type="image/x-icon" />
+    <script src="../../resources/js/contentLoad.js"></script>
+    <script src="../../resources/js/load-resources.js"></script>
+
+</head>
+
+<body>
+    <div class="form-container">
+        <h1>Login SAEP</h1>
+        <form action="./../../includes/login.php" method="POST" id="loginForm" class="loginForm">
+            <div id="user-container">
+                <label for="usuario">Login:</label>
+                <input type="text" maxlength="42" id="nome" name="usuario" placeholder="Digite seu nome" required
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu nome'" autocomplete="off" />
+                <div id="userError" class="error"></div>
+                <button type="button" id="botaoContinuar" class="botaoPrincipal">
+                    Avançar
+                </button>
+                <!--
+                <button type="button" id="meuBotao">Clique Aqui</button>
+                <br>
+                <div id="meuElemento">Texto a ser alterado</div>
+                <button type="button" id="addBotao">Adicionar</button>
+                <div id="meuElemento1"></div>
+                <div id="meuElemento2" style="width: 100px; height: 100px; background-color: red;"></div>
+-->
+                <h2>Lista de Tarefas</h2>
+
+                <input type="text" id="novaTarefa" placeholder="Nova Tarefa">
+                <button type="button" id="adicionarTarefa">Adicionar</button>
+                <ul id="listaTarefas"></ul>
+            </div>
+            <script>
+                /*
+                document.getElementById("meuBotao").addEventListener("click", function () {
+                    this.innerHTML = "Clicado";
+                });
+                document.getElementById("meuElemento").addEventListener("click", function () {
+                    this.innerHTML = "Texto alterado";
+                });
+                document.getElementById("addBotao").addEventListener("click", function () {
+                    var elemento = document.createElement("p");
+                    elemento.innerHTML = "Novo elemento";
+                    document.getElementById("meuElemento1").appendChild(elemento);
+                });
+
+                document.getElementById("meuElemento2").addEventListener("mouseover", function () {
+                    this.style.backgroundColor = "blue";
+                });
+                document.getElementById("meuElemento2").addEventListener("mouseout", function () {
+                    this.style.backgroundColor = "red";
+                });
+
+                */
+                document.getElementById("adicionarTarefa").addEventListener("click", function () {
+                    const novaTarefa = document.getElementById("novaTarefa");
+
+                    if (novaTarefa == "" || novaTarefa == null) {
+                        alert("Digite uma tarefa");
+                    } else {
+                        var elemento = document.createElement("li");
+                        elemento.innerHTML = novaTarefa.value;
+                        document.getElementById("listaTarefas").appendChild(elemento);
+                        novaTarefa.value = "";
+                    }
+                });
+            </script>
+            <!-- Campo de senha oculto inicialmente
+        <div id="senha-container">
+          <label for="senha">Senha:</label>
+          <input type="password" maxlength="62" id="senha" name="senha" placeholder="Digite sua senha" required
+            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite sua senha'" autocomplete="off" />
+          <div id="divAcessar" class="botaoAcessar">
+            <input type="submit" value="Entrar" id="acessar" class="botaoPrincipal" />
+          </div>
+        </div>
+        <br />
+    -->
+        </form>
+    </div>
+    <footer></footer>
+</body>
+
+</html>

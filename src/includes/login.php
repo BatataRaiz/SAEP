@@ -16,7 +16,7 @@ try {
         $senha = $_POST['senha'];
 
         // Consultar o banco de dados para verificar o login
-        $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE login = :login AND senha = :senha");
+        $stmt = $pdo->prepare("SELECT * FROM usuarios WHERE BINARY login = :login AND BINARY senha = :senha");
         $stmt->bindParam(':login', $login);
         $stmt->bindParam(':senha', $senha);
         $stmt->execute();
