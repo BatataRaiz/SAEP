@@ -14,85 +14,106 @@
 </head>
 
 <body>
-    <header id="headerContent">
-        <nav>
-            <div class="navbar-container">
-                <div class="logo">
-                    <strong>Bem-vindo <span id="username"></span></strong>
-                    <br>
-                    <img src="../../resources/images/saep.png" alt="Logo SAEP" class="logo">
-                </div>
-                <div class="menu">
-                    <div class="menuBotoes">
-                        <a href="#" id="menu-icon">
-                            <i class="fas fa-bars fa-2x"></i>
-                        </a>
-                        <ul class="navbar-menu" id="menu-list">
-                            <li><a>
-                                    <button type="button" id="botaoHome" class="botao-home">Home</button>
+    <header>
+        <div id="headerContent">
+            <nav>
+                <div class="navbar-container">
+                    <div class="logo">
+                        <strong>Bem-vindo <span id="username"></span></strong>
+                        <br>
+                        <img src="../../resources/images/saep.png" alt="Logo SAEP" class="logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menuBotoes">
+                            <a href="#" id="menu-icon">
+                                <i class="fas fa-bars fa-2x"></i>
+                            </a>
+                            <ul class="navbar-menu" id="menu-list">
+                                <li><a>
+                                        <button type="button" id="botaoHome" class="botao-home">Home</button>
+                                    </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoSobre" class="botao-sobre">Sobre</button>
+                                    </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoLogin" class="botao-login">Login</button>
+                                    </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoCadastro" class="botao-cadastro"
+                                            onclick="redirectCadastro()">Cadastrar</button>
+                                    </a></li>
                                 </a></li>
-                            <li><a>
-                                    <button type="button" id="botaoSobre" class="botao-sobre">Sobre</button>
-                                </a></li>
-                            <li><a>
-                                    <button type="button" id="botaoLogin" class="botao-login">Login</button>
-                                </a></li>
-                            <li><a>
-                                    <button type="button" id="botaoCadastro" class="botao-cadastro"
-                                        onclick="redirectCadastro()">Cadastrar</button>
-                                </a></li>
-                            </a></li>
-                            <li><a>
-                                    <button type="button" id="botaoAjuda" class="botao-ajuda">Ajuda</button>
-                                </a></li>
-                            <li><a>
-                                    <button type="button" id="botaoSair" class="b</ul>otao-sair"
-                                        onclick="redirectSair()">Sair</button>
-                                </a></li>
-                        </ul>
+                                <li><a>
+                                        <button type="button" id="botaoAjuda" class="botao-ajuda">Ajuda</button>
+                                    </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoSair" class="botao-sair"
+                                            onclick="redirectSair()">Sair</button>
+                                    </a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-            </div>
+        </div>
         </nav>
+        </div>
     </header>
 
-    <main id="mainContent">
-        <button type="button" title="botaoSidebar" id="toggleSidebar"><i class="fas fa-bars"></i>
-            <!-- Use a classe de ícone do Font Awesome -->
-
-        </button>
-
-        <!-- Sidebar -->
-        <div id="sidebar">
-            <a>
-                <button type="button" id="btnAjuda">Precisa de ajuda?</button>
-            </a>
-            <div id="menuSuspensoAjuda">
-                <p></p>
-            </div>
-
-            <button type="button" id="btnContato">Contato do Desenvolvedor</button>
-            <div id="menuSuspensoContato">
-            </div>
-
-            <a href="logout.php">
-                <button type="button" id="btnSair">Sair</button>
-            </a>
+    <main>
+        <div id="sidebar-button">
+            <button type="button" title="botaoSidebar" id="toggleSidebar"><i class="fas fa-bars"></i>
+                <!-- Use a classe de ícone do Font Awesome -->
+            </button>
         </div>
-        <!--
+        <div id="mainContent">
+
+            <!-- Sidebar -->
+            <div id="sidebar">
+                <a>
+                    <button type="button" id="btnAjuda">Precisa de ajuda?</button>
+                </a>
+                <div id="menuSuspensoAjuda">
+                    <p></p>
+                </div>
+
+                <button type="button" id="btnContato">Contato do Desenvolvedor</button>
+                <div id="menuSuspensoContato">
+                </div>
+
+                <a href="logout.php">
+                    <button type="button" id="btnSair">Sair</button>
+                </a>
+            </div>
+            <!--
         <div class="saudacao">
             <div class="img-container">
                 <img src="https://images.hdqwalls.com/wallpapers/bthumb/material-style-8k-rk.jpg" alt="" />
             </div>
         </div>
                                     -->
-        <div class="conteudo">
-            <a>Atividades</a>
-            <div class="atividades">
-                <script src="../../resources/js/tabelasMenu.js"></script>
+            <h2>Atividades</h2>
+            <div class="conteudo">
+                <div class="atividades">
+                    <script src="../../resources/js/tabelasMenu.js"></script>
+                </div>
+                <div class="atividadesEdit">
+                    <!--
+                    <script>
+                        function adicionarIconeConfigurar() {
+                            const configurarIcon = document.createElement("i");
+                            configurarIcon.classList.add("fa-solid", "fa-gear");
+
+                            const atividadesEdit = document.querySelector("div.atividadesEdit");
+                            atividadesEdit.appendChild(configurarIcon);
+
+                            return configurarIcon;
+                        }
+                        adicionarIconeConfigurar();
+
+                    </script>
+                    -->
+                </div>
             </div>
-        </div>
     </main>
     <!--
     <h3>Imagem com Desfoque</h3>

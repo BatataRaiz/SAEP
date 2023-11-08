@@ -53,3 +53,8 @@ function atualizarTabela() {
             console.error("Erro ao atualizar a tabela:", error);
         });
 }
+
+// Criar uma função para adicionar um ícone de configurar para cada atividade
+// Esta função será chamada no final do arquivo menu.php
+
+

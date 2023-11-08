@@ -82,13 +82,15 @@ nav {
 }
 
 .menu li a {
+  /*
   text-decoration: none;
   color: #000;
   text-align: center;
-  margin: 0 auto;
   padding: 0.5rem;
   margin-right: 20px;
   border-radius: 2rem;
+  */
+  margin: 0 auto;
 }
 
 .menu li a button {
@@ -144,9 +146,11 @@ nav {
   width: 100%;
   /* Ajustar a largura conforme necessário */
 }
-
+h2{
+  text-align: center;
+}
 .conteudo {
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -154,8 +158,8 @@ nav {
   max-width: 100%;
   border-radius: 10px;
   padding: 20px;
-  align-content: center;
 }
+
 
 .conteudo a {
   color: black;
@@ -168,6 +172,17 @@ nav {
   align-items: center;
   margin-top: 20px;
   text-decoration: none;
+}
+.atividadesEdit {
+  font-size: 2rem;
+  text-decoration: none;
+}
+.atividadesEdit i {
+  margin-left: 0.4rem;
+  margin-top: 1rem;
+}
+.fa-cog:before, .fa-gear:before {
+cursor: pointer;
 }
 
 table {
@@ -242,7 +257,7 @@ th {
 
 tbody {
   border-radius: 20px 20px 0px 0px;
-  filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0px 10px 1px rgba(0, 0, 0, 0.3));
 }
 
 tr {
@@ -361,7 +376,10 @@ teste
 #sidebar a {
   text-decoration: none;
 }
-
+.fa-gear:hover {
+  cursor: pointer;
+  background-color: #007bff;
+}
 #sidebar button:hover {
   background-color: #555;
 }
@@ -375,9 +393,20 @@ teste
 }
 
 main {
-  margin-left: 0;
+  display: flex;
+  align-items: center;
+}
+
+#mainContent {
+  margin: 0 auto;
+  display: flex;
   padding: 20px;
+  /* margin-left: 0; */
   transition: margin-left 0.3s;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 #headerContent.expanded {
@@ -388,14 +417,14 @@ main {
   z-index: 999;
 }
 
-#mainContent.expanded {
-  margin-left: 250px;
+#sidebar-button.expanded {
+  margin-left: 260px;
   z-index: 999;
   /* Ajuste a margem conforme necessário para acomodar a largura da Sidebar */
   /* Outros estilos para ajustar o conteúdo principal */
 }
 
-main.sidebar-open {
+main#sidebar-button {
   margin-left: 250px;
 }
 
@@ -405,7 +434,7 @@ main.sidebar-open {
 }
 
 a:-webkit-any-link {
-  cursor: default;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {

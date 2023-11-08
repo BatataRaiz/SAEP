@@ -46,8 +46,17 @@ try {
                 <td><?php echo $atividades['id']; ?></td>
                 <td><?php echo $atividades['nome']; ?></td>
                 <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="excluirAtividade(this)">Excluir</button></td>
-                <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="editarAtividade(this)">Editar</button></td>
+                <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="editarAtividade(this)">Editar</button>
+                </td>
+                <td>
+                    <div class="atividadesEdit">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+
+                </td>
+
             </tr>
+
         <?php endforeach; ?>
     </tbody>
     <script src="../resources/js/tabelasMenu.js"></script>

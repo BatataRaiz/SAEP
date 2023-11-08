@@ -12,45 +12,122 @@
     <script src="../../resources/js/contentLoad.js"></script>
     <script src="../../resources/js/load-resources.js"></script>
 
-
 </head>
 
 <body>
-    <main>
-        <form action="../../includes/cadastro.php" method="post">
-            <div class="titulo">
-                <h1>Cadastro de Atividades</h1>
-            </div>
-            <div class="fields">
-                <div class="nomeAtividade">
-                    <label for="nomeAtividade">Nome da Atividade:</label>
-                    <input type="text" maxlength="50" id="nomeAtividade" name="nomeAtividade"
-                        placeholder="Nome da atividade" required onfocus="this.placeholder = ''"
-                        onblur="this.placeholder = 'Nome da atividade'" autocomplete="off">
+    <header>
+        <div id="headerContent">
+            <nav>
+                <div class="navbar-container">
+                    <div class="logo">
+                        <img src="../../resources/images/saep.png" alt="Logo SAEP" class="logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menuBotoes">
+                            <a href="#" id="menu-icon">
+                                <i class="fas fa-bars fa-2x"></i>
+                            </a>
+                            <ul class="navbar-menu" id="menu-list">
+                                <li><a>
+                                        <button type="button" id="botaoHome" class="botao-home">Home</button>
+                                    </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoSobre" class="botao-sobre">Sobre</button>
+                                    </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoLogin" class="botao-login">Login</button>
+                                    </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoCadastro" class="botao-cadastro"
+                                            onclick="redirectCadastro()">Cadastrar</button>
+                                    </a></li>
+                                </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoAjuda" class="botao-ajuda">Ajuda</button>
+                                    </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoSair" class="botao-sair"
+                                            onclick="redirectSair()">Sair</button>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="nomeFuncionario">
-                    <label for="nomeFuncionario">Nome do Funcionário:</label>
-                    <input type="text" maxlength="50" id="nomeFuncionario" name="nomeFuncionario"
-                        placeholder="Nome do funcionário" required onfocus="this.placeholder = ''"
-                        onblur="this.placeholder = 'Nome do funcionário'" autocomplete="off">
-                </div>
-                <div class="detalhes">
-                    <label for="detalhes">Detalhes:</label>
-                    <input type="text" maxlength="50" id="detalhes" name="detalhes" placeholder="Detalhes" required
-                        onfocus="this.placeholder = ''" onblur="this.placeholder = 'Detalhes'" autocomplete="off">
-                </div>
-                <div class="botaoCadastro">
-                    <button type="submit" name="cadastrar">Cadastrar</button>
-                </div>
-            </div>
-        </form>
-        <div class="cadastro">
-
         </div>
+        </nav>
+        </div>
+    </header>
+    <main>
+        <div id="sidebar-button">
+            <button type="button" title="botaoSidebar" id="toggleSidebar"><i class="fas fa-bars"></i>
+                <!-- Use a classe de ícone do Font Awesome -->
+
+            </button>
+        </div>
+        <div id="mainContent">
+
+            <!-- Sidebar -->
+            <div id="sidebar">
+                <a>
+                    <button type="button" id="btnAjuda">Precisa de ajuda?</button>
+                </a>
+                <div id="menuSuspensoAjuda">
+                    <p></p>
+                </div>
+
+                <button type="button" id="btnContato">Contato do Desenvolvedor</button>
+                <div id="menuSuspensoContato">
+                </div>
+
+                <a href="logout.php">
+                    <button type="button" id="btnSair">Sair</button>
+                </a>
+            </div>
+            <!--
+        <div class="saudacao">
+            <div class="img-container">
+                <img src="https://images.hdqwalls.com/wallpapers/bthumb/material-style-8k-rk.jpg" alt="" />
+            </div>
+        </div>
+                                    -->
+            <form action="../../includes/cadastro.php" method="post">
+                <div class="titulo">
+                    <h1>Cadastro de Atividades</h1>
+                </div>
+                <div class="fields">
+                    <div class="nomeAtividade">
+                        <label for="nomeAtividade">Nome da Atividade:</label>
+                        <input type="text" maxlength="50" id="nomeAtividade" name="nomeAtividade"
+                            placeholder="Nome da atividade" required onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Nome da atividade'" autocomplete="off">
+                    </div>
+                    <div class="nomeFuncionario">
+                        <label for="nomeFuncionario">Nome do Funcionário:</label>
+                        <input type="text" maxlength="50" id="nomeFuncionario" name="nomeFuncionario"
+                            placeholder="Nome do funcionário" required onfocus="this.placeholder = ''"
+                            onblur="this.placeholder = 'Nome do funcionário'" autocomplete="off">
+                    </div>
+                    <div class="detalhes">
+                        <label for="detalhes">Detalhes:</label>
+                        <input type="text" maxlength="50" id="detalhes" name="detalhes" placeholder="Detalhes" required
+                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Detalhes'" autocomplete="off">
+                    </div>
+                    <div class="botaoCadastro">
+                        <button type="submit" name="cadastrar">Cadastrar</button>
+                    </div>
+                </div>
+            </form>
+            <div class="cadastro">
+
+            </div>
     </main>
 
 </body>
 <script src="../../resources/js/cadastro.js"></script>
 <script src="../../resources/js/form.js"></script>
+<script src="../../resources/js/menu.js"></script>
+<script src="../../resources/js/sidebarMenu.js"></script>
+<script src="../../resources/js/footer.js"></script>
+<footer></footer>
 
 </html>

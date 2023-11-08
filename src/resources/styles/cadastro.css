@@ -1,25 +1,260 @@
 @font-face {
     font-family: "Josefin Sans";
     src: url("../fonts/JosefinSans-VariableFont_wght.ttf") format("woff2");
-  }
+}
+
 * {
     font-family: "Josefin Sans", sans-serif;
 }
 
 body {
     background-color: #f2f2f2;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
-main {
-    margin: 0 auto;
-    display: grid   ;
+
+header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+    /* Aumente o espaço interno para melhorar a adaptabilidade */
+    justify-content: space-evenly;
+}
+
+nav {
+    display: flex;
     justify-content: center;
     align-items: center;
-    justify-items: center;
-    align-content: center;
-    min-height: 100vh;
 }
+
+.navbar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f2f2f2;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border: 1px solid #c0c0c0;
+    border-radius: 2rem;
+    filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.3));
+}
+
+.logo {}
+
+.logo img {
+    width: 10rem;
+    height: 140px;
+    margin: 0 auto;
+    max-width: 10rem;
+    height: auto;
+    border-bottom: 1px solid #000000;
+}
+
+.logo strong {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto;
+    color: #000;
+}
+
+.menu {
+    border-width: 1px;
+    /* Define a largura da borda para 1 pixel */
+}
+
+.menuBotoes ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    /*padding: 0.8rem;*/
+}
+
+.menu li a {
+    /*
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    padding: 0.5rem;
+    margin-right: 20px;
+    border-radius: 2rem;
+    */
+    margin: 0 auto;
+}
+
+.menu li a button {
+    transition: background-color 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 2rem;
+    background-color: #000000;
+    color: #fff;
+    padding: 0.5rem;
+    width: 140px;
+    margin-top: 20px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu li a button:hover {
+    background-color: #007bff;
+}
+
+.menu li a button.active {
+    background-color: #000000;
+    /* Cor ativa */
+    color: #fff;
+}
+
+#menu-icon {
+    display: none;
+    /* Oculta o ícone em dispositivos desktop */
+}
+
+main {
+    display: flex;
+    align-items: center;
+}
+
+/*
+teste
+*/
+#toggleSidebar {
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+    transform: rotate(45deg);
+    cursor: pointer;
+    z-index: 9999;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.toggleSidebar:active {
+    transform: rotate(135deg);
+}
+
+#toggleSidebar:hover {
+    background-color: #0056b3;
+}
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* Inicialmente oculto */
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #ffffff;
+    transition: left 0.3s ease;
+    /* Outros estilos da Sidebar */
+    /* Adiciona uma transição suave para a largura */
+}
+
+#sidebar.open {
+    left: 0;
+    /* Expandido */
+}
+
+#sidebar-button.expanded {
+    margin-left: 260px;
+    z-index: 999;
+}
+
+#sidebar button {
+    display: block;
+    padding: 10px;
+    font-size: 1.05em;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    background-color: #444;
+    border: none;
+    color: #ffffff;
+    text-align: left;
+    cursor: pointer;
+    border-bottom: 1px solid #555;
+    padding: 12px;
+}
+
+#sidebar a {
+    text-decoration: none;
+}
+
+#sidebar button:hover {
+    background-color: #555;
+}
+
+#menuSuspensoContato {
+    display: none;
+}
+
+#menuSuspensoAjuda {
+    display: none;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+#headerContent.expanded {
+    margin-left: 250px;
+    /* Ajuste a margem conforme necessário para acomodar a largura da Sidebar */
+    /* Outros estilos para ajustar o conteúdo principal */
+    transition: margin-left 0.3s;
+    z-index: 999;
+}
+
+#mainContent {
+    margin: 0 auto;
+    display: flex;
+    padding: 20px;
+    /* margin-left: 0; */
+    transition: margin-left 0.3s;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#mainContent.expanded {
+    margin-left: 250px;
+    z-index: 999;
+    /* Ajuste a margem conforme necessário para acomodar a largura da Sidebar */
+    /* Outros estilos para ajustar o conteúdo principal */
+}
+
+main.sidebar-open {
+    margin-left: 250px;
+}
+
+#menu-icon {
+    display: none;
+    /* Oculta o ícone em dispositivos desktop */
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
 form {
     display: grid;
     background-color: #fff;
@@ -32,6 +267,7 @@ form {
     border-radius: 20px;
     filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.3));
 }
+
 .titulo {
     font-size: 20px;
     font-weight: bold;
@@ -42,6 +278,7 @@ form {
     text-align: center;
     margin-bottom: 10px;
 }
+
 .fields {
     display: flex;
     flex-direction: column;
@@ -51,6 +288,7 @@ form {
     justify-items: center;
     font-size: 20px;
 }
+
 label {
     display: flex;
     font-weight: bold;
@@ -91,11 +329,106 @@ button[type="submit"]:hover {
     form {
         width: 80%;
     }
+
     input[type="text"] {
         width: 100%;
     }
+
     button[type="submit"] {
         width: 100%;
     }
+
+    /* GERAL */
+    @media screen and (max-width: 768px) {
+        .conteudo {
+            display: grid;
+            justify-content: start;
+            align-items: center;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+            padding: 20px;
+            align-content: center;
+        }
+
+        .navbar-container {
+            padding: 0.2rem;
+            /* Reduzir o espaçamento interno do contêiner */
+            border-radius: 1rem;
+            /* Reduzir a borda do contêiner */
+        }
+
+        .logo img {
+            width: 8rem;
+            /* Reduzir o tamanho da imagem do logo */
+            height: 120px;
+            /* Reduzir a altura da imagem do logo */
+        }
+
+        .logo strong {
+            font-size: 20px;
+            /* Reduzir o tamanho da fonte do nome de usuário */
+        }
+
+        .menu li a {
+            font-size: 16px;
+            /* Reduzir o tamanho da fonte dos links do menu */
+            padding: 0.3rem;
+            /* Reduzir o espaçamento interno dos links do menu */
+            margin-right: 10px;
+            /* Reduzir a margem direita entre os links do menu */
+        }
+
+        .menu li a button {
+            width: 120px;
+            /* Reduzir a largura dos botões do menu */
+            margin-top: 10px;
+            /* Reduzir o espaçamento superior dos botões do menu */
+            font-size: 18px;
+            /* Reduzir o tamanho da fonte dos botões do menu */
+        }
+
+        header {
+            /* Cor de fundo do novo header */
+            padding: 10px 20px;
+            width: 100%;
+            /* Espaçamento interno do novo header */
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding: 0.5rem;
+            /* Aumente o espaço interno para melhorar a adaptabilidade */
+            justify-content: space-between;
+        }
+
+        /* Estilos para o elemento <a> */
+        /* Estilos para o ícone do menu */
+        i.fas.fa-bars.fa-2x {
+            font-size: 24px;
+            display: none;
+            /* Tamanho do ícone do menu */
+        }
+
+        #menu-icon {
+            place-items: center;
+            display: block;
+            color: #fff;
+            /* Cor do ícone do menu */
+            text-decoration: none;
+            /* Remova o sublinhado do link */
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            width: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+            padding: 20px;
+            align-content: center;
+        }
+    }
 }
-    

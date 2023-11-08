@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('toggleSidebar');
     const sidebar = document.getElementById('sidebar');
     const headers = document.getElementById('headerContent');
-    const mainContent = document.getElementById('mainContent');
+    //const mainContent = document.getElementById('mainContent');
+    const mainContent = document.getElementById('sidebar-button');
     toggleButton.addEventListener('click', function () {
         sidebar.classList.toggle('open'); // Adiciona ou remove a classe 'open' da Sidebar
         mainContent.classList.toggle('expanded');
@@ -33,7 +34,7 @@ btnContato.addEventListener('click', function () {
         menuSuspensoContato.appendChild(contatoDev);
         menuSuspensoContato.style.display = 'block'; // Mostra o menu suspenso
         menuSuspensoContato.style.color = '#fff';
-        menuSuspensoContato.style.  marginBottom = '10px';
+        menuSuspensoContato.style.marginBottom = '10px';
         menuSuspensoContato.style.marginTop = '10px';
         menuSuspensoContato.style.paddingLeft = '40px';
         linkedin.style.lineHeight = '1.5';
@@ -54,6 +55,7 @@ btnAjuda.addEventListener('click', function () {
         link.href = 'https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm';
         link.target = '_blank';
         link.textContent = 'LGPD'; // Defina o texto âncora como "LGPD"
+        link.style.cursorpointer = 'pointer';
 
         ajudaDev.appendChild(link); // Adicione o âncora ao parágrafo
         menuSuspensoAjuda.appendChild(ajudaDev);
