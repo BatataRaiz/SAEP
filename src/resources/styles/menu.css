@@ -146,9 +146,11 @@ nav {
   width: 100%;
   /* Ajustar a largura conforme necessário */
 }
-h2{
+
+h2 {
   text-align: center;
 }
+
 .conteudo {
   display: flex;
   justify-content: center;
@@ -173,16 +175,20 @@ h2{
   margin-top: 20px;
   text-decoration: none;
 }
+
 .atividadesEdit {
   font-size: 2rem;
   text-decoration: none;
 }
+
 .atividadesEdit i {
   margin-left: 0.4rem;
   margin-top: 1rem;
 }
-.fa-cog:before, .fa-gear:before {
-cursor: pointer;
+
+.fa-cog:before,
+.fa-gear:before {
+  cursor: pointer;
 }
 
 table {
@@ -208,7 +214,7 @@ td button {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  margin-top: 20px;
+  margin: 5px;
   border-radius: 20px 0px 20px 0px;
 }
 
@@ -282,10 +288,11 @@ table th:first-of-type {
 table th:last-of-type {
   border-radius: 0px 20px 0px 0px;
 }
-
+/*
 td:last-of-type button {
   border-radius: 20px 0px 0px 20px;
 }
+*/
 
 th,
 td {
@@ -376,10 +383,19 @@ teste
 #sidebar a {
   text-decoration: none;
 }
+#btnEditar {
+  display: none;
+  /* Inicialmente oculto */
+}
+.fa-solid {
+  font-size: 1.4rem;
+}
+
 .fa-gear:hover {
   cursor: pointer;
-  background-color: #007bff;
+  /*background-color: #007bff;*/
 }
+
 #sidebar button:hover {
   background-color: #555;
 }

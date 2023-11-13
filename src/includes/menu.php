@@ -32,6 +32,7 @@ try {
             <th>Nome da Atividade</th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
     <?php
@@ -45,16 +46,17 @@ try {
             <tr data-atividade-id="<?php echo $atividades['id']; ?>">
                 <td><?php echo $atividades['id']; ?></td>
                 <td><?php echo $atividades['nome']; ?></td>
-                <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="excluirAtividade(this)">Excluir</button></td>
-                <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="editarAtividade(this)">Editar</button>
+                <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="excluirAtividade(this)"><i class="fa-solid fa-trash-can"></i></button></td>
+                <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="editarAtividade(this)"> <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
                 </td>
                 <td>
-                    <div class="atividadesEdit">
-                        <i class="fa-solid fa-gear"></i>
+                    <div id="menu-button">
+                        <a href="#" onclick="editarAtividade(<?php echo $atividades['id']; ?>)"></a>
+                        <button type="button" title="botaoMenu" id="toggleMenu"> <i class="fa-solid fa-gear"></i>
+                        </button>
                     </div>
-
                 </td>
-
             </tr>
 
         <?php endforeach; ?>
