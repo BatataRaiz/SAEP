@@ -51,12 +51,15 @@ try {
                     </button>
                 </td>
                 <td>
-                    <div id="menu-button">
-                        <a href="#" onclick="editarAtividade(<?php echo $atividades['id']; ?>)"></a>
-                        <button type="button" title="botaoMenu" id="toggleMenu"> <i class="fa-solid fa-gear"></i>
-                        </button>
+                    <div class="dropdown">
+                        <button type="button" title="botaoMenu" id="toggleMenu"> <i class="fa-solid fa-gear"></i></button>
+                        <div class="dropdown-content" id="menuSuspenso">
+                            <a href="#" onclick="editarAtividade(<?php echo $atividades['id']; ?>)">Editar</a>
+                            <!-- Adicione mais opções de menu conforme necessário -->
+                        </div>
                     </div>
                 </td>
+
             </tr>
 
         <?php endforeach; ?>

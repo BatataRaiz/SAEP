@@ -1,10 +1,10 @@
-const toggleButton = document.getElementById('toggleMenu');
+/*const toggleButton = document.getElementById('toggleMenu');
 
 document.addEventListener('DOMContentLoaded', function () {
     const menuBar = document.getElementById('menuBar');
     const headers = document.getElementById('headerContent');
     const mainContent = document.getElementById('menu-button'); // Corrigido o ID aqui
-    
+
     toggleButton.addEventListener('click', function () {
         menuBar.classList.toggle('open');
         mainContent.classList.toggle('expanded');
@@ -48,3 +48,20 @@ toggleButton.addEventListener('click', function () {
         console.log("teste");
     }
 });
+*/
+
+//Criar funcao editarAtividade
+function editarAtividade(id) {
+    const atividade = document.getElementById('atividade' + id);
+    const descricao = document.getElementById('descricao' + id);
+    const data = document.getElementById('data' + id);
+    const hora = document.getElementById('hora' + id);
+    const local = document.getElementById('local' + id);
+    const btnEditar = document.getElementById('btnEditar' + id);
+    const btnSalvar = document.getElementById('btnSalvar' + id);
+    const btnExcluir = document.getElementById('btnExcluir' + id);
+    const btnCancelar = document.getElementById('btnCancelar' + id);
+    console.log("teste");
+    window.location.href = "#atividade" + id;
+}
+

@@ -195,6 +195,8 @@ table {
   border-collapse: collapse;
   width: 100%;
   color: black;
+  filter: drop-shadow(10px 10px 1px rgba(0, 0, 0, 0.3));
+
 }
 
 #tartaruga {
@@ -263,7 +265,6 @@ th {
 
 tbody {
   border-radius: 20px 20px 0px 0px;
-  filter: drop-shadow(0px 10px 1px rgba(0, 0, 0, 0.3));
 }
 
 tr {
@@ -387,6 +388,38 @@ teste
   display: none;
   /* Inicialmente oculto */
 }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  filter: none !important;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: block;
+  filter: none !important;
+  background-color: white;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+  filter: none !important;
+  color: #0056b3;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .fa-solid {
   font-size: 1.4rem;
 }
@@ -399,7 +432,9 @@ teste
 #sidebar button:hover {
   background-color: #555;
 }
-
+#menuSuspenso {
+  filter: none;
+}
 #menuSuspensoContato {
   display: none;
 }
