@@ -2,14 +2,9 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu SAEP</title>
-    <link rel="stylesheet" href="../../resources/styles/menu.css">
-    <link rel="stylesheet" href="../partials/footer.css">
-    <link rel="icon" href="../../resources/images/saep.ico" type="image/x-icon" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script defer>
+    <script src="../../resources/js/load-resources.js"></script>
+    <script>
         $(document).ready(function () {
             // Faça uma chamada AJAX para o arquivo PHP de verificação de sessão
             $.ajax({
@@ -17,8 +12,6 @@
                 type: 'POST',
                 dataType: 'json',
                 success: function (response) {
-                    console.log(response);
-
                     // Verifique a resposta do servidor
                     if (response && response.autenticado) {
                         // O usuário está autenticado, exiba o conteúdo do menu
@@ -36,7 +29,12 @@
             });
         });
     </script>
-    <script src="../../resources/js/load-resources.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu SAEP</title>
+    <link rel="stylesheet" href="../../resources/styles/menu.css">
+    <link rel="stylesheet" href="../partials/footer.css">
+    <link rel="icon" href="../../resources/images/saep.ico" type="image/x-icon" />
     <!--
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
