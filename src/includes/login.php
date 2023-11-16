@@ -1,6 +1,8 @@
 <?php
 // Iniciar a sessão
+//require_once 'auth.php';
 session_start();
+
 $host = "localhost";
 $user = "root";
 $password = "";
@@ -43,5 +45,5 @@ try {
     exit;
 }
 
-session_destroy();
+//session_destroy();
 ?>

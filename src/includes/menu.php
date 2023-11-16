@@ -54,7 +54,7 @@ try {
                     <div class="dropdown">
                         <button type="button" title="botaoMenu" id="toggleMenu"> <i class="fa-solid fa-gear"></i></button>
                         <div class="dropdown-content" id="menuSuspenso">
-                            <a href="#" onclick="editarAtividade(<?php echo $atividades['id']; ?>)">Editar</a>
+                            <button class="botaoEdit" href="#" onclick="editarAtividade(<?php echo $atividades['id']; ?>)">Editar</button>
                             <!-- Adicione mais opções de menu conforme necessário -->
                         </div>
                     </div>

@@ -8,9 +8,41 @@
     <link rel="stylesheet" href="../../resources/styles/menu.css">
     <link rel="stylesheet" href="../partials/footer.css">
     <link rel="icon" href="../../resources/images/saep.ico" type="image/x-icon" />
-    <script src="../../resources/js/contentLoad.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script defer>
+        $(document).ready(function () {
+            // Faça uma chamada AJAX para o arquivo PHP de verificação de sessão
+            $.ajax({
+                url: '../../includes/auth.php',
+                type: 'POST',
+                dataType: 'json',
+                success: function (response) {
+                    console.log(response);
+
+                    // Verifique a resposta do servidor
+                    if (response && response.autenticado) {
+                        // O usuário está autenticado, exiba o conteúdo do menu
+                        console.log('Usuário autenticado.');
+                        window.location.href = './menu.html';
+                    } else {
+                        // O usuário não está autenticado, redirecione para a página de login
+                        console.log('Usuário não autenticado. Redirecionando para a página de login.');
+                        window.location.href = './index.html';
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Erro na chamada AJAX:', status, error);
+                }
+            });
+        });
+    </script>
     <script src="../../resources/js/load-resources.js"></script>
-    <script src="../../resources/js/extension.js"></script>
+    <!--
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/contentLoad.js"></script>
+    <script src="../../resources/js/auth.js"></script>
+    -->
 
 </head>
 
@@ -110,47 +142,48 @@
             </div>
 
 
-   
-    <!--
+
+            <!--
     <h3>Imagem com Desfoque</h3>
     <img src="../Images/tartarugmenu-lista.jpg" alt="Tartaruga" class="blur" name="tartaruga" id="tartaruga">
                 -->
-    <script>
-        $(document).ready(function () {
-            // Define a função toggleDropdown
-            function toggleDropdown() {
-                $("#menu-list").slideToggle(); // Mostra ou oculta a lista suspensa
-            }
+            <script>
+                $(document).ready(function () {
+                    // Define a função toggleDropdown
+                    function toggleDropdown() {
+                        $("#menu-list").slideToggle(); // Mostra ou oculta a lista suspensa
+                    }
 
-            // Adiciona um evento de clique ao elemento com o id "menu-icon"
-            $("#menu-icon").click(toggleDropdown);
+                    // Adiciona um evento de clique ao elemento com o id "menu-icon"
+                    $("#menu-icon").click(toggleDropdown);
 
-            // Adiciona um evento de redimensionamento ao documento
-            $(window).on("resize", function () {
-                // Verifica se a largura da janela é maior que 768 pixels
-                if ($(window).width() > 768) {
-                    // Mostra a lista suspensa
-                    $("#menu-list").show();
-                } else {
-                    // Oculta a lista suspensa
-                    $("#menu-list").hide();
-                }
-            });
-        });
-        // Obtenha o botão do menu e o elemento navbar
-        const menuBtn = document.getElementById('menu-icon');
-        const navbar = document.querySelector('.menu');
+                    // Adiciona um evento de redimensionamento ao documento
+                    $(window).on("resize", function () {
+                        // Verifica se a largura da janela é maior que 768 pixels
+                        if ($(window).width() > 768) {
+                            // Mostra a lista suspensa
+                            $("#menu-list").show();
+                        } else {
+                            // Oculta a lista suspensa
+                            $("#menu-list").hide();
+                        }
+                    });
+                });
+                // Obtenha o botão do menu e o elemento navbar
+                const menuBtn = document.getElementById('menu-icon');
+                const navbar = document.querySelector('.menu');
 
-        // Manipule o evento de clique do botão
-        menuBtn.addEventListener('click', function () {
-            // Adicione a classe "rounded" ao elemento navbar
-            navbar.classList.remove('rounded');
-        });
-    </script>
-    <script src="../../resources/js/menu.js"></script>
-    <script src="../../resources/js/sidebarMenu.js"></script>
-    <script src="../../resources/js/footer.js"></script>
-    <footer></footer>
+                // Manipule o evento de clique do botão
+                menuBtn.addEventListener('click', function () {
+                    // Adicione a classe "rounded" ao elemento navbar
+                    navbar.classList.remove('rounded');
+                });
+            </script>
 </body>
+
+<script src="../../resources/js/menu.js"></script>
+<script src="../../resources/js/sidebarMenu.js"></script>
+<script src="../../resources/js/footer.js"></script>
+<footer></footer>
 
 </html>

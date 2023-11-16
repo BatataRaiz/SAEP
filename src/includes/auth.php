@@ -1,5 +1,7 @@
+
 <?php
-// Iniciar a sessão (se ainda não estiver iniciada)
+/*
+Iniciar a sessão (se ainda não estiver iniciada)
 session_start();
 $response = array(); // Crie um array para a resposta
 
@@ -18,6 +20,23 @@ if (!isset($_SESSION['usuario'])) {
 var_dump($response);
 
 // Defina o cabeçalho Content-Type para JSON
+header('Content-Type: application/json');
+echo json_encode($response);
+?>
+*/
+// Inicie a sessão
+session_start();
+
+// Verifique se há uma sessão de usuário ou superusuário
+if (isset($_SESSION['usuario']) || isset($_SESSION['superusuario'])) {
+    $response = array('autenticado' => true);
+    header('Location: ../temp/pages/index.html');
+} else {
+    $response = array('autenticado' => false);
+    header('Location: ../temp/pages/index.html');
+}
+
+// Retorna a resposta como JSON
 header('Content-Type: application/json');
 echo json_encode($response);
 ?>

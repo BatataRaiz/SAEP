@@ -9,8 +9,38 @@
     <link rel="stylesheet" href="../../resources/styles/cadastro.css">
     <link rel="stylesheet" href="../partials/footer.css">
     <link rel="icon" href="../../resources/images/saep.ico" type="image/x-icon" />
-    <script src="../../resources/js/contentLoad.js"></script>
+    <script defer async="false">
+        $(document).ready(function () {
+            // Faça uma chamada AJAX para o arquivo PHP de verificação de sessão
+            $.ajax({
+                url: '../../includes/auth.php',
+                type: 'POST',
+                dataType: 'json',
+                success: function (response) {
+                    // Verifique a resposta do servidor
+                    if (response && response.autenticado) {
+                        // O usuário está autenticado, exiba o conteúdo do menu
+                        console.log('Usuário autenticado.');
+                        // Adicione aqui o conteúdo do menu ou redirecione para a página do menu
+                    } else {
+                        // O usuário não está autenticado, redirecione para a página de login
+                        console.log('Usuário não autenticado. Redirecionando para a página de login.');
+                        window.location.href = './index.html';
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Erro na chamada AJAX:', status, error);
+                }
+            });
+        });
+    </script>
     <script src="../../resources/js/load-resources.js"></script>
+    <!--
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/contentLoad.js"></script>
+    <script src="../../resources/js/auth.js"></script>
+    -->
 
 </head>
 
