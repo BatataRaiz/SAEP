@@ -1,3 +1,4 @@
+/*
 function jQuery(url) {
     var script = document.createElement("script");
     script.type = "text/javascript";
@@ -8,7 +9,7 @@ function jQuery(url) {
 }
 //Carregar o arquivo jQuery
 //jQuery("https://code.jquery.com/jquery-3.7.1.min.js");
-
+*/
 // Função para adicionar um arquivo JavaScript ao cabeçalho do documento
 function loadScript(url) {
     var script = document.createElement("script");
