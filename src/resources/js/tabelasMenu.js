@@ -36,8 +36,11 @@ function excluirAtividade(botao) {
         });
 }
 
-function visualizarAtividade() {
+function visualizarAtividade(botao) {
     alert("Atividade visualizada com sucesso!");
+    const atividadeId = botao.getAttribute("data-atividade-id");
+    window.location.href = "../../temp/pages/atividade.html?id=" + atividadeId;
+
 }
 function atualizarTabela() {
     const menuPhpPath = "../../includes/menu.php";

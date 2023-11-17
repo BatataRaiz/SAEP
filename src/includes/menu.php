@@ -47,7 +47,7 @@ try {
                 <td><?php echo $atividades['id']; ?></td>
                 <td><?php echo $atividades['nome']; ?></td>
                 <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="excluirAtividade(this)"><i class="fa-solid fa-trash-can"></i></button></td>
-                <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="editarAtividade(this)"> <i class="fa-solid fa-magnifying-glass"></i>
+                <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="visualizarAtividade(this)"> <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </td>
                 <td>

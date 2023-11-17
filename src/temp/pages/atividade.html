@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Atividade</title>
+    <link rel="stylesheet" href="../../resources/styles/menu.css">
+    <link rel="stylesheet" href="../../resources/styles/atividade.css">
+    <link rel="stylesheet" href="../partials/footer.css">
+    <link rel="icon" href="../../resources/images/saep.ico" type="image/x-icon" />
+    <script src="../../resources/js/contentLoad.js"></script>
+    <script src="../../resources/js/load-resources.js"></script>
+    <script src="../../resources/js/extension.js"></script>
+</head>
+
+<body>
+    <header>
+        <div id="headerContent">
+            <nav>
+                <div class="navbar-container">
+                    <div class="logo">
+                        <img src="../../resources/images/saep.png" alt="Logo SAEP" class="logo">
+                    </div>
+                    <div class="menu">
+                        <div class="menuBotoes">
+                            <a href="#" id="menu-icon">
+                                <i class="fas fa-bars fa-2x"></i>
+                            </a>
+                            <ul class="navbar-menu" id="menu-list">
+                                <li><a>
+                                        <button type="button" id="botaoHome" class="botao-home">Home</button>
+                                    </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoSobre" class="botao-sobre">Sobre</button>
+                                    </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoLogin" class="botao-login">Login</button>
+                                    </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoCadastro" class="botao-cadastro"
+                                            onclick="redirectCadastro()">Cadastrar</button>
+                                    </a></li>
+                                </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoAjuda" class="botao-ajuda">Ajuda</button>
+                                    </a></li>
+                                <li><a>
+                                        <button type="button" id="botaoSair" class="botao-sair"
+                                            onclick="redirectSair()">Sair</button>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="sidebar-button">
+            <button type="button" title="botaoSidebar" id="toggleSidebar"><i class="fas fa-bars"></i>
+                <!-- Use a classe de ícone do Font Awesome -->
+
+            </button>
+        </div>
+        <div id="mainContent">
+
+            <!-- Sidebar -->
+            <div id="sidebar">
+                <a>
+                    <button type="button" id="btnAjuda">Precisa de ajuda?</button>
+                </a>
+                <div id="menuSuspensoAjuda">
+                    <p></p>
+                </div>
+
+                <button type="button" id="btnContato">Contato do Desenvolvedor</button>
+                <div id="menuSuspensoContato">
+                </div>
+
+                <a href="logout.php">
+                    <button type="button" id="btnSair">Sair</button>
+                </a>
+            </div>
+        </div>
+        <div class="atividade">
+            <script src="../../resources/js/tabelaAtividade.js"></script>
+        </div>
+    </main>
+    <script src="../../resources/js/menu.js"></script>
+    <script src="../../resources/js/sidebarMenu.js"></script>
+    <script src="../../resources/js/footer.js"></script>
+    <footer></footer>
+</body>
+
+</html>
