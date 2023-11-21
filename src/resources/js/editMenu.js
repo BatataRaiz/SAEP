@@ -48,7 +48,6 @@ toggleButton.addEventListener('click', function () {
         console.log("teste");
     }
 });
-*/
 
 //Criar funcao editarAtividade
 function editarAtividade(id) {
@@ -64,4 +63,4 @@ function editarAtividade(id) {
     console.log("teste");
     window.location.href = "#atividade" + id;
 }
-
+*/

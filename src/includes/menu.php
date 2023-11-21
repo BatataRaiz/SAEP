@@ -47,6 +47,7 @@ try {
                 <td><?php echo $atividades['id']; ?></td>
                 <td><?php echo $atividades['nome']; ?></td>
                 <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="excluirAtividade(this)"><i class="fa-solid fa-trash-can"></i></button></td>
+
                 <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="visualizarAtividade(this)"> <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </td>
@@ -54,8 +55,7 @@ try {
                     <div class="dropdown">
                         <button type="button" title="botaoMenu" id="toggleMenu"> <i class="fa-solid fa-gear"></i></button>
                         <div class="dropdown-content" id="menuSuspenso">
-                            <button class="botaoEdit" href="#" onclick="editarAtividade(<?php echo $atividades['id']; ?>)">Editar</button>
-                            <!-- Adicione mais opções de menu conforme necessário -->
+                        <button type="button" class="botaoEdit" data-atividade-id="<?php echo isset($atividades['id']) ? $atividades['id'] : 'N/A'; ?>" onclick="editarAtividade(this)">Editar</button>
                         </div>
                     </div>
                 </td>

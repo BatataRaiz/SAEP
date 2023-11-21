@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Elemento com a classe .atividade onde você deseja inserir o conteúdo do atividade.php
     const atividadeContainer = document.querySelector(".atividade");
 
-    const atividadePHPPath = "../../includes/atividade.php";
+    const atividadePHPPath = "../../includes/editar.php";
 
     // Obtém o ID da atividade a partir da URL
     const urlParams = new URLSearchParams(window.location.search);
@@ -23,6 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
             //console.log("Conteúdo carregado com sucesso:", data);
         })
         .catch((error) => {
-            console.error("Erro ao carregar os detalhes da atividade:", error);
+            console.error("Erro ao carregar a edição da atividade:", error);
         });
 });

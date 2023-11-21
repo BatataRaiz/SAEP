@@ -40,7 +40,6 @@ function visualizarAtividade(botao) {
     alert("Atividade visualizada com sucesso!");
     const atividadeId = botao.getAttribute("data-atividade-id");
     window.location.href = "../../temp/pages/atividade.html?id=" + atividadeId;
-
 }
 function atualizarTabela() {
     const menuPhpPath = "../../includes/menu.php";
@@ -60,4 +59,7 @@ function atualizarTabela() {
 // Criar uma função para adicionar um ícone de configurar para cada atividade
 // Esta função será chamada no final do arquivo menu.php
 
-
+function editarAtividade(botao) {
+    const atividadeId = botao.getAttribute("data-atividade-id");
+    window.location.href = "../../temp/pages/editar.html?id=" + atividadeId;
+}

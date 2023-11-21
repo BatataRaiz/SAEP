@@ -12,27 +12,37 @@ try {
     echo "Erro: " . $e->getMessage();
     exit;
 }
+// Verifica se o parâmetro 'id' está presente na solicitação
+if (isset($_POST['id'])) {
+    // Puxa o valor do parâmetro 'id' da solicitação
+    $atividadeId = $_POST['id'];
 
-if (isset($_POST['numero'])) {
-    $id_atividade = $_POST['numero'];
-    // realizar uma busca no banco de dados para obter os dados da atividade
-    // Consultar o banco de dados para verificar o login
-    $stmt = $pdo->prepare("SELECT * FROM atividades WHERE id = :id_atividade");
-    $stmt->bindParam(':id_atividade', $id_atividade);
+    // Realiza uma busca no banco de dados para obter os dados da atividade
+    $stmt = $pdo->prepare("SELECT * FROM atividades WHERE id = :atividadeId");
+    $stmt->bindParam(':atividadeId', $atividadeId);
     $stmt->execute();
     $atividade = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    // Verifica se a atividade foi encontrada
+    if ($atividade) {
+        // Exibe os detalhes da atividade
+        // ... (seu código para exibir os detalhes da atividade)
+    } else {
+        echo "Atividade não encontrada.";
+    }
 } else {
     echo "Número da atividade não informado.";
     exit;
 }
 
 ?>
+
 <div class="content">
     <h2>Detalhes da Atividade</h2>
 
     <?php if ($atividade) : ?> <!-- Verifica se a atividade foi encontrada. -->
         <p><strong>Número da Atividade:</strong>
-            <?php echo $atividade['numero']; ?>
+            <?php echo $atividade['id']; ?>
         </p> <!-- Exibe o número da atividade. -->
         <p><strong>Nome da Atividade:</strong>
             <?php echo $atividade['nome']; ?>
