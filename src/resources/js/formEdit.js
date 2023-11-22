@@ -23,6 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
             //console.log("Conteúdo carregado com sucesso:", data);
         })
         .catch((error) => {
-            console.error("Erro ao carregar a edição da atividade:", error);
+            console.error("Erro ao carregar os detalhes da atividade:", error);
         });
 });

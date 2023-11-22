@@ -55,7 +55,7 @@ try {
                     <div class="dropdown">
                         <button type="button" title="botaoMenu" id="toggleMenu"> <i class="fa-solid fa-gear"></i></button>
                         <div class="dropdown-content" id="menuSuspenso">
-                        <button type="button" class="botaoEdit" data-atividade-id="<?php echo isset($atividades['id']) ? $atividades['id'] : 'N/A'; ?>" onclick="editarAtividade(this)">Editar</button>
+                        <button type="button" class="botaoEdit" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="editarAtividade(this)">Editar</button>
                         </div>
                     </div>
                 </td>

@@ -28,7 +28,7 @@ if (isset($_POST['id'])) {
         // Exibe os detalhes da atividade
         // ... (seu código para exibir os detalhes da atividade)
     } else {
-        echo "Atividade não encontrada.";
+        //echo "Atividade não encontrada.";
     }
 } else {
     echo "Número da atividade não informado.";

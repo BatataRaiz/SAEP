@@ -61,5 +61,6 @@ function atualizarTabela() {
 
 function editarAtividade(botao) {
     const atividadeId = botao.getAttribute("data-atividade-id");
+    console.log(atividadeId);
     window.location.href = "../../temp/pages/editar.html?id=" + atividadeId;
 }
