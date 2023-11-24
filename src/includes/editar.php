@@ -4,6 +4,7 @@ $host = "localhost";
 $user = "root";
 $password = "";
 $database = "saepDatabase";
+
 try {
     // Conectar ao banco de dados usando PDO
     $pdo = new PDO("mysql:host=$host;dbname=$database", $user, $password);
@@ -13,56 +14,65 @@ try {
     exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['salvar'])) {
-    $atividade_nome = $_POST['nomeAtividade'];
-    $atividade_funcionario = $_POST['nomeFuncionario'];
-    $atividade_detalhes = $_POST['detalhes'];
-    $idAtividade = $_POST['id'];
+// Verifica se os dados do formulário foram enviados via POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['id'])) {
+        $idAtividade = $_POST['id'];
 
-    try {
-        $stmt = $pdo->prepare("UPDATE atividades SET nome = :nomeAtividade, funcionario = :nomeFuncionario, detalhes = :detalhes WHERE id = :id");
-        $stmt->bindParam(':nomeAtividade', $atividade_nome);
-        $stmt->bindParam(':nomeFuncionario', $atividade_funcionario);
-        $stmt->bindParam(':detalhes', $atividade_detalhes);
-        $stmt->bindParam(':id', $idAtividade);
+        try {
+            // Utilize $idAtividade conforme necessário no seu código, por exemplo:
+            $stmt = $pdo->prepare("SELECT * FROM atividades WHERE id = :id");
+            $stmt->bindParam(':id', $idAtividade);
+            $stmt->execute();
 
-        $stmt->execute();
-        $atividade = $stmt->fetch(PDO::FETCH_ASSOC);
+            $atividade = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        header("Location: ../temp/pages/menu.html");
-        exit();
-    } catch (PDOException $e) {
-        echo "Erro ao editar atividade: " . $e->getMessage();
-    }
-} elseif ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['numero'])) {
-    $idAtividade = $_GET['id'];
+            // Faça algo com os dados da atividade, se necessário
+            echo "Dados da atividade com ID $idAtividade: " . json_encode($atividade);
 
-    try {
-        $stmt = $pdo->prepare("SELECT * FROM atividades WHERE id = :id");
-        $stmt->bindParam(':id', $idAtividade);
-        $stmt->execute();
+            // Verifica se outros campos do formulário estão definidos antes de acessá-los
+            if (isset($_POST['nomeAtividade'], $_POST['nomeFuncionario'], $_POST['detalhes'])) {
+                // Variáveis para os outros campos do formulário
+                $atividade_nome = $_POST['nomeAtividade'];
+                $atividade_funcionario = $_POST['nomeFuncionario'];
+                $atividade_detalhes = $_POST['detalhes'];
 
-        $atividade = $stmt->fetch(PDO::FETCH_ASSOC);
-    } catch (PDOException $e) {
-        echo "Erro na consulta SQL: " . $e->getMessage();
+                // Atualiza os dados da atividade no banco de dados
+                $stmt = $pdo->prepare("UPDATE atividades SET nome = :nome, funcionario = :funcionario, detalhes = :detalhes WHERE id = :id");
+                $stmt->bindParam(':nome', $atividade_nome);
+                $stmt->bindParam(':funcionario', $atividade_funcionario);
+                $stmt->bindParam(':detalhes', $atividade_detalhes);
+                $stmt->bindParam(':id', $idAtividade);
+
+                $stmt->execute();
+
+                exit();
+            } else {
+                echo "Campos do formulário não estão definidos.";
+            }
+        } catch (PDOException $e) {
+            echo "Erro ao buscar atividade: " . $e->getMessage();
+        }
+    } else {
+        echo "ID da atividade não informado.";
+        exit;
     }
 }
+
 
 ?>
 
 
 <div class="content">
     <div class="form-container">
-        <form action="" method="post">
+        <form action="./menu.html" method="post">
             <div class="titulo">
                 <h1>Editar Atividade</h1>
             </div>
             <div class="fields">
-
                 <div class="idAtividade">
                     <label for="idAtividade">ID da Atividade:</label>
                     <input type="hidden" name="id" value="<?php echo isset($atividade['id']) ? $atividade['id'] : ''; ?>">
-
                 </div>
                 <div class="nomeAtividade">
                     <label for="nomeAtividade">Nome da Atividade:</label>
@@ -76,7 +86,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['salvar'])) {
                     <label for="detalhes">Detalhes:</label>
                     <input type="text" maxlength="50" id="detalhes" name="detalhes" placeholder="Detalhes" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Detalhes'" autocomplete="off" value="<?php echo isset($atividade['detalhes']) ? $atividade['detalhes'] : ''; ?>">
                 </div>
-
                 <div class="botaoSalvar">
                     <button type="submit" name="salvar">Salvar</button>
                 </div>
