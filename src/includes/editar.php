@@ -45,13 +45,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $stmt->bindParam(':id', $idAtividade);
 
                 $stmt->execute();
-
+                /*
+                var_dump($stmt->rowCount());
+                var_dump($stmt->errorInfo());
+                var_dump($stmt->errorCode());
+                var_dump($atividade_nome);
+                var_dump($atividade_funcionario);
+                var_dump($atividade_detalhes);
+                */
+                echo "<script> window.location.href = '../temp/pages/menu.html'; </script>";
                 exit();
             } else {
                 echo "Campos do formulário não estão definidos.";
             }
         } catch (PDOException $e) {
             echo "Erro ao buscar atividade: " . $e->getMessage();
+
         }
     } else {
         echo "ID da atividade não informado.";
@@ -59,22 +68,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-
 ?>
 
 
 <div class="content">
     <div class="form-container">
-        <form action="./menu.html" method="post">
+        <form action="" method="post">
             <div class="titulo">
                 <h1>Editar Atividade</h1>
             </div>
             <div class="fields">
-                <div class="idAtividade">
+                <div class="idAtividadeclass">
                     <label for="idAtividade">ID da Atividade:</label>
-                    <input type="hidden" name="id" value="<?php echo isset($atividade['id']) ? $atividade['id'] : ''; ?>">
+                    <input title="ID da atividade" type="text" name="idAtividade" readonly value="<?php echo isset($atividade['id']) ? $atividade['id'] : ''; ?>">
                 </div>
-                <div class="nomeAtividade">
+                <div class="nomeAtividade"> 
                     <label for="nomeAtividade">Nome da Atividade:</label>
                     <input type="text" maxlength="50" id="nomeAtividade" name="nomeAtividade" placeholder="Nome da atividade" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nome da atividade'" autocomplete="off" value="<?php echo isset($atividade['nome']) ? $atividade['nome'] : ''; ?>">
                 </div>

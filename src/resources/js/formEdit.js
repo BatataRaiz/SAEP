@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Elemento com a classe .atividade onde você deseja inserir o conteúdo do atividade.php
     const atividadeContainer = document.querySelector(".atividade");
 
-    const atividadePHPPath = "../../includes/editar.php";
+    const atividadePHPath = "../../includes/editar.php";
 
     // Obtém o ID da atividade a partir da URL
     const urlParams = new URLSearchParams(window.location.search);
     const atividadeId = urlParams.get('id');
 
     // Fetch para buscar o conteúdo do atividade.php
-    fetch(atividadePHPPath, {
+    fetch(atividadePHPath, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
