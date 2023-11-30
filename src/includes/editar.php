@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "<script> window.location.href = '../temp/pages/menu.html'; </script>";
                 exit();
             } else {
-                echo "Campos do formulário não estão definidos.";
+                //echo "Campos do formulário não estão definidos.";
             }
         } catch (PDOException $e) {
             echo "Erro ao buscar atividade: " . $e->getMessage();
