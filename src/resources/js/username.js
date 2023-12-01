@@ -36,10 +36,12 @@ document.addEventListener("load", function () {
         )
         .then((data) => {
             document.getElementById("username").innerHTML = data;
+            console.log(data); // Adicione esta linha para depuração
         }
         )
         .catch((error) => {
             console.error("Erro ao  carregar o usuário:", error);
+            console.log(error); // Adicione esta linha para depuração
         }
         );
 

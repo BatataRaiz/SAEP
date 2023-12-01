@@ -46,16 +46,16 @@ try {
             <tr data-atividade-id="<?php echo $atividades['id']; ?>">
                 <td><?php echo $atividades['id']; ?></td>
                 <td><?php echo $atividades['nome']; ?></td>
-                <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="excluirAtividade(this)"><i class="fa-solid fa-trash-can"></i></button></td>
+                <td><button type="button" title="botaoTabela" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="excluirAtividade(this)"><i class="fa-solid fa-trash-can"></i></button></td>
 
-                <td><button type="button" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="visualizarAtividade(this)"> <i class="fa-solid fa-magnifying-glass"></i>
+                <td><button type="button" title="botaoTabela" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="visualizarAtividade(this)"> <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </td>
                 <td>
                     <div class="dropdown">
                         <button type="button" title="botaoMenu" id="toggleMenu"> <i class="fa-solid fa-gear"></i></button>
                         <div class="dropdown-content" id="menuSuspenso">
-                        <button type="button" class="botaoEdit" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="editarAtividade(this)">Editar</button>
+                        <button type="button" title="botaoEdit"  class="botaoEdit" data-atividade-id="<?php echo $atividades['id']; ?>" onclick="editarAtividade(this)">Editar</button>
                         </div>
                     </div>
                 </td>

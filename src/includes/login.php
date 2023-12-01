@@ -7,7 +7,7 @@ $host = "localhost";
 $user = "root";
 $password = "";
 $database = "saepDatabase";
-
+header('Content-Type: text/html; charset=utf-8');
 $error_message = "";
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$database", $user, $password);
@@ -37,7 +37,9 @@ try {
     }
 
     if (isset($_GET['error']) && $_GET['error'] == '1001') {
+        
         echo "<div class='failed' style='text-align: center; font-size:20px; font-weight:600;'>Usuário ou senha inválidos.</div>";
+        header('Location: ../temp/pages/index.html?error=1001');
         // Você pode redirecionar para index.html aqui se necessário
     }
 } catch (PDOException $e) {
@@ -46,4 +48,3 @@ try {
 }
 
 //session_destroy();
-?>

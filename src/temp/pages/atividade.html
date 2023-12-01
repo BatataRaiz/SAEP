@@ -4,6 +4,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../../resources/js/load-resources.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Faça uma chamada AJAX para o arquivo PHP de verificação de sessão
+            $.ajax({
+                url: '../../includes/auth.php',
+                type: 'POST',
+                dataType: 'json',
+                success: function (response) {
+                    // Verifique a resposta do servidor
+                    if (response && response.autenticado) {
+                        // O usuário está autenticado, exiba o conteúdo do menu
+                        console.log('Usuário autenticado.');
+                        //window.location.href = './menu.html';
+                    } else {
+                        // O usuário não está autenticado, redirecione para a página de login
+                        console.log('Usuário não autenticado. Redirecionando para a página de login.');
+                        window.location.href = './index.html';
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.error('Erro na chamada AJAX:', status, error);
+                }
+            });
+        });
+    </script>
     <title>Editar Atividade</title>
     <link rel="stylesheet" href="../../resources/styles/menu.css">
     <link rel="stylesheet" href="../../resources/styles/atividade.css">

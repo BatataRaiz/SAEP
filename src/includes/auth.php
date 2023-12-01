@@ -36,6 +36,6 @@ if (isset($_SESSION['usuario']) || isset($_SESSION['superusuario'])) {
 
 // Retorna a resposta como JSON
 
-header('Content-Type: application/json');
+header('Content-Type: text/html; charset=utf-8');
 echo json_encode($response);
 ?>

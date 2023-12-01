@@ -1,0 +1,38 @@
+{
+    "extends": [
+        "development"
+    ],
+    "rules": {
+        "no-undefined-variables": false
+    },
+    "hints": {
+        "no-disallowed-headers": [
+            "warning",
+            {
+                "ignore": [
+                    "Server"
+                ],
+                "include": [
+                    "Custom-Header"
+                ]
+            }
+        ],
+        "content-type": [
+            "error",
+            {
+                ".*\\.js": "application/javascript; charset=utf-8"
+            }
+        ],
+        "x-content-type-options": "error",
+        "http-cache": [
+            "error",
+            {
+                "maxAgeTarget": 300, // 5 minutes in seconds
+                "maxAgeResource": 1576800, // 6 months in seconds
+                "revvingPatterns": [
+                    "\\/\\d+\\/\\w+\\.\\w{1,3}"
+                ]
+            }
+        ],
+    }
+}

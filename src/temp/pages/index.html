@@ -23,7 +23,7 @@
     <h1>Login Saep</h1>
     <form action="./../../includes/login.php" method="POST" id="loginForm" class="loginForm">
       <div id="user-container">
-        <label for="usuario">Login:</label>
+        <label for="nome">Login:</label>
         <input type="text" maxlength="42" id="nome" name="usuario" placeholder="Digite seu nome" required
           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite seu nome'" autocomplete="off" />
         <div id="userError" class="error"></div>
@@ -38,7 +38,9 @@
         <input type="password" maxlength="62" id="senha" name="senha" placeholder="Digite sua senha" required
           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Digite sua senha'" autocomplete="off" />
         <div id="divAcessar" class="botaoAcessar">
-          <input type="submit" value="Entrar" id="acessar" class="botaoPrincipal" />
+          <button type="submit" onclick="validarFormulario()" value="Entrar" id="acessar" class="botaoPrincipal"
+            name="acessar">
+            Acessar </button>
         </div>
       </div>
       <br />
@@ -46,11 +48,12 @@
   </div>
 </body>
 
-  <div id="falseMsg" class="failed"></div>
-  <div id="trueMsg" class="success"></div>
-  <script src="../../resources/js/index.js"></script>
-  <script src="../../resources/js/footer.js"></script>
-  <footer></footer>
+<div id="falseMsg" class="failed"></div>
+<div id="trueMsg" class="success"></div>
+<script src="../../resources/js/index.js" type="application/javascript"></script>
+<script src="../../resources/js/footer.js" type="application/javascript"></script>
+<script src="../../resources/js/form.js"></script>
+<footer></footer>
 
 
 </html>
